@@ -2,117 +2,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Falling Feathers Hollow</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: 'Georgia', serif;
+      background-color: #fdf6f0;
+      color: #4b3b2b;
       margin: 0;
       padding: 0;
-      background-color: #f6f1e7;
-      color: #3e342f;
     }
     header {
-      background-color: #7c5c42;
-      color: #fff5e6;
-      padding: 2rem;
+      background-color: #8b5e3c;
+      color: white;
+      padding: 1em;
       text-align: center;
-      background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    }
+    header img {
+      max-height: 150px;
     }
     nav {
-      background-color: #5e4432;
-      padding: 1rem;
-      text-align: center;
+      background-color: #c49e78;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0.5em 0;
     }
     nav a {
-      color: #f4ecd8;
+      color: #4b3b2b;
+      margin: 0.5em 1em;
       text-decoration: none;
-      margin: 0 10px;
       font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
     }
     main {
-      padding: 2rem;
+      padding: 2em;
       text-align: center;
-    }
-    .logo {
-      max-width: 300px;
-      margin-bottom: 1.5rem;
-    }
-    .button {
-      background-color: #a47551;
-      color: white;
-      padding: 1em 2em;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      font-size: 1.1em;
-      display: inline-block;
-      margin-top: 2rem;
-    }
-    .button:hover {
-      background-color: #8d5f3b;
-    }
-    .donation-section {
-      background-color: #e6dbcf;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-      border-top: 2px solid #c7a17a;
-    }
-    .donation-section h2 {
-      margin-bottom: 1rem;
-    }
-    .donation-section a {
-      background-color: #7c5c42;
-      color: white;
-      padding: 0.8em 1.5em;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-    .donation-section a:hover {
-      background-color: #5e3e2b;
     }
     footer {
-      background-color: #e4d3b2;
+      background-color: #8b5e3c;
+      color: white;
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      border-top: 3px solid #c7a17a;
+      padding: 2em 1em;
+    }
+    .donate-btn {
+      background-color: #f4d35e;
+      color: #4b3b2b;
+      border: none;
+      padding: 1em 2em;
+      font-size: 1.1em;
+      margin-top: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .donate-btn:hover {
+      background-color: #eec643;
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="falling_feathers_logo_compressed.jpg" alt="Falling Feathers Hollow Logo">
     <h1>Falling Feathers Hollow</h1>
-    <p>A place for second chances—on two legs or four.</p>
   </header>
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="animals.html">Animal Profiles</a>
-    <a href="sponsor.html">Sponsor</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="profiles.html">Animal Profiles</a>
+    <a href="sponsor.html">Sponsor an Animal</a>
     <a href="shop.html">Shop</a>
     <a href="videos.html">Videos</a>
   </nav>
   <main>
-    <img src="falling_feathers_logo_.jpeg" alt="Falling Feathers Hollow Logo" class="logo" />
-    <p>Welcome to our growing sanctuary where animals are rescued, people are restored, and simple living opens doors to new beginnings.</p>
-    <a href="about.html" class="button">Learn More</a>
+    <h2>Welcome to Falling Feathers Hollow</h2>
+    <p>A place where animals heal, people grow, and simple living leads to new beginnings.</p>
   </main>
-
-  <section class="donation-section">
-    <h2>Support Our Mission</h2>
-    <p>Your donations help us care for animals, build sanctuary space, and offer healing to those in need.</p>
-    <a href="https://www.zeffy.com/en-US/fundraising/support-falling-feathers-hollow" target="_blank">Make a Donation</a>
-  </section>
-
   <footer>
-    &copy; 2025 Falling Feathers Hollow. Built with love, feathers, and faith.
+    <p>Support our sanctuary and mission.</p>
+    <a class="donate-btn" href="https://www.zeffy.com/en-US/fundraising/support-falling-feathers-hollow" target="_blank">Donate</a>
   </footer>
 </body>
 </html>
