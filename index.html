@@ -199,11 +199,60 @@ body {
       <a href="videos.html">Videos</a>
     </nav>
 
+<section class="intro feather-accent">
+  <p>
+    Falling Feathers Hollow is a peaceful place where animals are given space to thrive, people are reminded to breathe, and purpose is planted in everyday work.
+  </p>
+</section>
+<style>
+  .feather-accent {
+    background-color: #fff9f0;
+    padding: 1.5em;
+    margin: 2em auto;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 800px;
+    font-size: 1.15em;
+    color: #4b3b2a;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  .feather-accent::before {
+    content: '🪶';
+    font-size: 2em;
+    position: absolute;
+    top: -0.8em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .feather-accent p {
+    margin: 0;
+  }
+</style>
 
-<audio autoplay loop style="display: none;">
-  <source src="falling-feathers-hollow.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+
+
+
+<div class="audio-player">
+  <audio controls autoplay loop>
+    <source src="falling-feathers-hollow.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+<style>
+  .audio-player {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f6ebd5;
+  }
+  .audio-player audio {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+</style>
+
 
 
 
