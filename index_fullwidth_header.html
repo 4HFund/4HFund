@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Falling Feathers Hollow</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: url('https://www.transparenttextures.com/patterns/burlap.png') repeat, #e6dccf;
+      color: #4b3e2d;
+      cursor: url('https://cur.cursors-4u.net/nature/nat-11/nat1021.cur'), auto;
+    }
+    .container {
+      max-width: 1000px;
+      background: #fffefa;
+      margin: 2rem auto;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    header {
+      width: 100%;
+      background-color: #8b5e3c;
+      padding: 0;
+      margin: 0;
+      padding: 0;
+      border-radius: 10px 10px 0 0;
+    }
+    header img {
+      width: 100%;
+      height: auto;
+      max-height: 250px;
+      object-fit: contain;
+      display: block;
+    }
+    nav {
+      background-color: #c49e78;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1rem;
+      border-radius: 0 0 10px 10px;
+    }
+    nav a {
+      color: #4b3b2b;
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    nav a::before {
+      content: '🪶 ';
+    }
+    h2 {
+      font-family: 'Courier New', Courier, monospace;
+      background: #deb887;
+      display: inline-block;
+      padding: 0.4em 1em;
+      border-radius: 6px;
+      box-shadow: 2px 2px 0 #a87c4c;
+    }
+    .section {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .flock-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .flock-item {
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    .flock-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .flock-caption {
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      color: #5a4632;
+    }
+    .quote {
+      font-style: italic;
+      margin-top: 1rem;
+      color: #5e4834;
+    }
+    .help-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .help-box {
+      background-color: #fcf6ee;
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+      flex: 1 1 200px;
+      border: 1px solid #e3d3bd;
+    }
+    .blueprint {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .email-signup input[type="email"] {
+      padding: 0.6rem;
+      width: 60%;
+      max-width: 300px;
+      margin-right: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .email-signup button {
+      padding: 0.6rem 1rem;
+      background-color: #7c5c3f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem 1rem 0.5rem;
+      background-color: #8b5e3c;
+      color: white;
+      font-size: 0.9rem;
+      border-radius: 0 0 10px 10px;
+    }
+    .donate-btn {
+      background-color: #f4d35e;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #4b3f30;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    .donate-btn:hover {
+      background-color: #eec643;
+    }
+    .feather {
+      position: fixed;
+      top: -50px;
+      width: 20px;
+      height: 20px;
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABu0lEQVRYR+3Wz0rDQBzH8QcSCwWxkaJJmBwVvYDLZyY2Cl0GxtRZUViknYOBtaC3U2FgkVLP//vuXtkr4nLuzn9zvvcfLPyzHcQ8CmOxHoB74HawBawGdBHONyoF9wj6AnTPIYVgJuBXoAXgYwIb2PAkYCyoq0kkKmBtkkCmKlN3spMbAGadLMrlq9XqcM0g2QzTzQaXy+UiakgF8EZ4ALhJtvQzjNb3IeACe+SxZGHU5HCOkDriqNVqydzGYaDLhCNbq9W3GUZrqfV61Jpssw34DwWYhVKpVFN1u1/P5fLdbol0DXAF8DFkKAmr5GKYTlezzNPFj1QqGQQbJvKc1y1sfRpjTfYwE97Yx7QL4BtAF54BvAF8XxyxM3Ak8AQzoYwPXLMZ6AJ7J0nmjrzvKZqjtNl5rzU5TFcdP0Dfu4AoSyoAwX8CHCzBdqkBnZJ0AAAAASUVORK5CYII=');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.9;
+      animation: fall linear infinite;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="falling_feathers_logo_compressed.jpg" alt="Falling Feathers Hollow Logo">
+</header>
+<div class="container">
+      <img src="falling_feathers_logo_compressed.jpg" alt="Falling Feathers Hollow Logo">
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="profiles.html">Animal Profiles</a>
+      <a href="sponsor.html">Sponsor an Animal</a>
+      <a href="shop.html">Shop</a>
+      <a href="videos.html">Videos</a>
+    </nav>
+    <section class="section">
+      <h2>Meet the Flock</h2>
+      <div class="flock-gallery">
+        <div class="flock-item">
+          <img src="duck_collage_cleaned.png" alt="Waddles and Ming Ming">
+          <p class="flock-caption"><strong>Waddles & Ming Ming</strong><br>Our very first feathered friends.</p>
+        </div>
+        <div class="flock-item">
+          <img src="barred-rock-chicks-falling-feathers.jpg" alt="The Little Chicks">
+          <p class="flock-caption"><strong>The Little Chicks</strong><br>They may be tiny, but their chirps, flaps, and curiosity fill the whole sanctuary with life.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h2>Why We Roost</h2>
+      <p>We believe second chances aren’t just for animals—they’re for people too. At Falling Feathers Hollow, we rescue the overlooked, love the forgotten, and create a space where healing happens naturally.</p>
+      <div class="quote">“Hope begins with a feather.”</div>
+    </section>
+    <section class="section">
+      <h2>Lend a Feather</h2>
+      <div class="help-options">
+        <div class="help-box"><a href="https://www.zeffy.com/en-US/fundraising/support-falling-feathers-hollow" target="_blank"><strong>Donate</strong><br>Support our daily work</a></div>
+        <div class="help-box"><strong>Sponsor</strong><br>Give monthly to a friend</div>
+        <div class="help-box"><strong>Share</strong><br>Tell our story to others</div>
+      </div>
+    </section>
+    <section class="section">
+      <h2>A Nest in the Making</h2>
+      <p>This is where our vision takes shape — a sanctuary designed with love, built feather by feather, step by step.</p>
+      <img src="falling_feathers_blueprint_web_ready.jpg" alt="Sanctuary blueprint" class="blueprint" />
+    </section>
+    <section class="section">
+      <h2>Join the Flock</h2>
+      <p>Sign up to receive updates, animal stories, and big announcements.</p>
+      <form class="email-signup">
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+    <footer>
+      <p>&copy; Falling Feather 2025. All rights reserved.</p>
+    </footer>
+  </div>
+  <script>
+    const feathers = 25;
+    for (let i = 0; i < feathers; i++) {
+      const feather = document.createElement('div');
+      feather.classList.add('feather');
+      feather.style.left = Math.random() * 100 + 'vw';
+      feather.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.body.appendChild(feather);
+    }
+  </script>
+</body>
+</html>
