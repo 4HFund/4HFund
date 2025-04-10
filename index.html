@@ -327,5 +327,19 @@
       document.body.appendChild(feather);
     }
   </script>
+
+<!-- Instagram script loader -->
+<script>
+  function loadInstagram() {
+    var ig = document.createElement('script');
+    ig.setAttribute('src', 'https://www.instagram.com/embed.js');
+    ig.setAttribute('async', '');
+    document.body.appendChild(ig);
+  }
+  window.addEventListener("load", function () {
+    loadInstagram();
+  });
+</script>
+
 </body>
 </html>
