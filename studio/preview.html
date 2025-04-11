@@ -10,17 +10,15 @@
     body {
       margin: 0;
       font-family: 'Georgia', serif;
-      background: url('https://www.transparenttextures.com/patterns/burlap.png') repeat, #f2e6d9;
-      color: #4e3b2c;
-      cursor: url('https://cur.cursors-4u.net/nature/nat-11/nat1021.cur'), auto;
+      background: url('woodland_creek_background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f7f3eb;
     }
     .container {
       max-width: 1100px;
-      background: #fdf6ec;
+      background: rgba(0, 0, 0, 0.6);
       margin: 3rem auto;
       padding: 3rem;
-      border: 2px dashed #c2a97e;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
       border-radius: 20px;
     }
     h1, h2 {
@@ -29,37 +27,34 @@
     }
     h1 {
       font-size: 3.5em;
-      color: #8c5e3c;
+      color: #fce6c9;
     }
     h2 {
       font-size: 2.5em;
       margin-top: 3rem;
-      color: #7d5634;
+      color: #fdd9a0;
     }
     .quote {
       font-size: 1.4em;
       text-align: center;
       margin-bottom: 3rem;
       font-style: italic;
-      color: #77593e;
+      color: #ffeccf;
+    }
+    .accordion-wrapper {
+      margin-bottom: 2rem;
     }
     .accordion {
       background-color: #fff9f2;
-      border: none;
+      color: #5a3d26;
       width: 100%;
-      text-align: left;
       padding: 1rem;
       font-size: 1.5em;
-      color: #5a3d26;
-      border-bottom: 1px solid #d2b48c;
+      border: none;
+      text-align: left;
       cursor: pointer;
-      transition: background 0.3s ease;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-    }
-    .accordion:hover {
-      background-color: #f3e5d0;
     }
     .accordion::after {
       content: '+';
@@ -69,24 +64,29 @@
     .accordion.active::after {
       content: '-';
     }
+    .summary {
+      font-size: 1em;
+      color: #e9e4dd;
+      font-style: italic;
+      margin: 0.5rem 1rem 0.5rem 0;
+    }
     .panel {
       display: none;
-      padding: 0 1rem;
       background-color: #fdf6ec;
+      color: #3c2e1f;
+      padding: 1rem;
       border-left: 8px solid #d2b48c;
       border-radius: 0 0 8px 8px;
-      box-shadow: 2px 2px 12px rgba(0,0,0,0.05);
     }
     .panel p {
       font-size: 1.1em;
       line-height: 1.6;
-      margin: 1rem 0;
     }
     footer {
       text-align: center;
       font-size: 0.95em;
       margin-top: 4rem;
-      color: #866d52;
+      color: #eee;
     }
   </style>
 </head>
@@ -97,42 +97,69 @@
 
     <h2>Creative Services Menu</h2>
 
-    <button class="accordion">1. Custom Songwriting</button>
-    <div class="panel"><p>From heartfelt testimonies and tributes to quirky duck anthems—we create personalized lyrics and melodies with emotional impact or just pure fun. Includes options for faith-based, children’s, and custom brand anthems.</p></div>
+    <!-- Sample Accordion Entry -->
+    <div class="accordion-wrapper">
+      <button class="accordion">1. Custom Songwriting</button>
+      <div class="summary">Turn your story or brand into a one-of-a-kind anthem.</div>
+      <div class="panel"><p>From heartfelt testimonies and tributes to quirky duck anthems—we create personalized lyrics and melodies with emotional impact or just pure fun. Includes options for faith-based, children’s, and custom brand anthems.</p></div>
+    </div>
 
-    <button class="accordion">2. Resume & Career Tools</button>
-    <div class="panel"><p>Custom resumes, veteran-friendly formats, tailored cover letters, LinkedIn optimization, creative portfolio layouts, and even mock interview prep. We help you present your best self.</p></div>
+    
+    <div class="accordion-wrapper">
+      <button class="accordion">2. Resume & Career Tools</button>
+      <div class="summary">Professionally crafted resumes, cover letters, and career support tools.</div>
+      <div class="panel"><p>Custom resumes, veteran-friendly formats, tailored cover letters, LinkedIn optimization, creative portfolio layouts, and even mock interview prep. We help you present your best self.</p></div>
+    </div>
 
-    <button class="accordion">3. Personal Branding Kits</button>
-    <div class="panel"><p>A full identity starter pack: resume, one-page bio, custom colors and fonts, headshot touch-up, and matching PDF/social assets. Perfect for career changers, speakers, and entrepreneurs.</p></div>
+    <div class="accordion-wrapper">
+      <button class="accordion">3. Personal Branding Kits</button>
+      <div class="summary">Show up with confidence—visually, verbally, and professionally.</div>
+      <div class="panel"><p>A full identity starter pack: resume, one-page bio, custom colors and fonts, headshot touch-up, and matching PDF/social assets. Perfect for career changers, speakers, and entrepreneurs.</p></div>
+    </div>
 
-    <button class="accordion">4. Small Business Starter Packs</button>
-    <div class="panel"><p>Logo design, mission statement help, business cards, flyers, branding templates, and a one-page website—everything you need to launch with clarity and style.</p></div>
+    <div class="accordion-wrapper">
+      <button class="accordion">4. Small Business Starter Packs</button>
+      <div class="summary">Launch your dream with a logo, brand kit, and startup materials.</div>
+      <div class="panel"><p>Logo design, mission statement help, business cards, flyers, branding templates, and a one-page website—everything you need to launch with clarity and style.</p></div>
+    </div>
 
-    <button class="accordion">5. Website Creation & Support</button>
-    <div class="panel"><p>Mobile-ready websites with custom design, matching your vibe—whether rustic, peaceful, bold, or playful. Includes SEO setup and training so you’re in control. Optional blog, shop, or donation features too!</p></div>
+    <div class="accordion-wrapper">
+      <button class="accordion">5. Website Creation & Support</button>
+      <div class="summary">Get a beautiful, mobile-ready website that matches your vision.</div>
+      <div class="panel"><p>Mobile-ready websites with custom design, matching your vibe—whether rustic, peaceful, bold, or playful. Includes SEO setup and training so you’re in control. Optional blog, shop, or donation features too!</p></div>
+    </div>
 
-    <button class="accordion">6. Grant & Proposal Support</button>
-    <div class="panel"><p>We help you write, organize, and submit winning proposals. Includes editing, formatting, budgeting tools, and support for veteran, community, and nonprofit initiatives.</p></div>
+    <div class="accordion-wrapper">
+      <button class="accordion">6. Grant & Proposal Support</button>
+      <div class="summary">Get help writing and formatting proposals that win support.</div>
+      <div class="panel"><p>We help you write, organize, and submit winning proposals. Includes editing, formatting, budgeting tools, and support for veteran, community, and nonprofit initiatives.</p></div>
+    </div>
 
-    <button class="accordion">7. Community & Church Creative Support</button>
-    <div class="panel"><p>Designs that feel handmade and heartfelt: event flyers, kid’s activity sheets, testimony formatting, sermon slides, and seasonal church content. Custom bundles available for ministries.</p></div>
+    <div class="accordion-wrapper">
+      <button class="accordion">7. Community & Church Creative Support</button>
+      <div class="summary">Flyers, event promos, Sunday school materials, and more.</div>
+      <div class="panel"><p>Designs that feel handmade and heartfelt: event flyers, kid’s activity sheets, testimony formatting, sermon slides, and seasonal church content. Custom bundles available for ministries.</p></div>
+    </div>
 
-    <button class="accordion">8. Educational & Homestead Resources</button>
-    <div class="panel"><p>From printable worksheets and startup kits to homeschool resources and duck-themed lesson pages, we create tools that blend faith, fun, and function—for all ages and walks of life.</p></div>
+    <div class="accordion-wrapper">
+      <button class="accordion">8. Educational & Homestead Resources</button>
+      <div class="summary">Fun, faith-friendly tools for home education and homesteading.</div>
+      <div class="panel"><p>From printable worksheets and startup kits to homeschool resources and duck-themed lesson pages, we create tools that blend faith, fun, and function—for all ages and walks of life.</p></div>
+    </div>
+    
 
     <footer>
-      <p>Have an idea? Need a quote? <strong>Let’s create something beautiful together.</strong><br/>Reach out through our contact page or email us at <em>hello@fallingfeathers.us</em></p>
+      <p>Have an idea? Need a quote? <strong>Let’s create something beautiful together.</strong><br/>Email us at <em>hello@fallingfeathers.us</em></p>
       <p>&copy; Falling Feathers Studio 2025</p>
     </footer>
   </div>
 
   <script>
     const accordions = document.querySelectorAll(".accordion");
-    accordions.forEach((accordion) => {
-      accordion.addEventListener("click", function () {
+    accordions.forEach(btn => {
+      btn.addEventListener("click", function() {
         this.classList.toggle("active");
-        const panel = this.nextElementSibling;
+        const panel = this.nextElementSibling.nextElementSibling;
         panel.style.display = panel.style.display === "block" ? "none" : "block";
       });
     });
