@@ -2,179 +2,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Falling Feathers Studio</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background: url('woodland_creek_background.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #2c2c2c;
-    }
-    .container {
-      max-width: 1100px;
-      background: rgba(255, 255, 255, 0.35);
-      margin: 3rem auto;
-      padding: 3rem;
-      border-radius: 20px;
-    }
-    h1, h2 {
-      font-family: 'Dancing Script', cursive;
-      text-align: center;
-    }
-    h1 {
-      font-size: 3.5em;
-      color: #fce6c9;
-    }
-    h2 {
-      font-size: 2.5em;
-      margin-top: 3rem;
-      color: #fdd9a0;
-    }
-    .quote {
-      font-size: 1.4em;
-      text-align: center;
-      margin-bottom: 3rem;
-      font-style: italic;
-      color: #ffeccf;
-    }
-    .accordion-wrapper {
-      margin-bottom: 2rem;
-    }
-    .accordion {
-      font-family: 'Patrick Hand', cursive;
-      background-color: #fff9f2;
-      color: #5a3d26;
-      width: 100%;
-      padding: 1rem;
-      font-size: 1.5em;
-      border: none;
-      text-align: left;
-      cursor: pointer;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(ellipse at center, #1a1a2e, #0f0f1c);
+      color: #ffffff;
       display: flex;
-      justify-content: space-between;
-    }
-    .accordion::after {
-      content: '';
-      display: inline-block;
-      width: 32px;
-      height: 32px;
-      background: url('duck_icon_40x40.png') no-repeat center center;
-      background-size: contain;
-      
-      font-size: 1.5em;
-      color: #a07b52;
-    }
-    .accordion.active::after {
-      
-    }
-    .summary {
-      font-family: 'Open Sans', sans-serif;
-      color: #5a5a5a;
-      font-size: 1em;
-      color: #e9e4dd;
-      font-style: italic;
-      margin: 0.5rem 1rem 0.5rem 0;
-    }
-    .panel {
-      display: none;
-      background-color: #fdf6ec;
-      color: #3c2e1f;
-      padding: 1rem;
-      border-left: 8px solid #d2b48c;
-      border-radius: 0 0 8px 8px;
-    }
-    .panel p {
-      font-family: 'Open Sans', sans-serif;
-      color: #4a4a4a;
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-    footer {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      font-size: 0.95em;
-      margin-top: 4rem;
-      color: #eee;
+      height: 100vh;
+    }
+
+    .logo {
+      width: 220px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #ff5e00, #ff2f92, #007bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 600px;
+      font-size: 1.2rem;
+      color: #cccccc;
+      margin-bottom: 40px;
+    }
+
+    .cta-button {
+      background: linear-gradient(to right, #ff5e00, #007bff);
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      color: white;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #007bff;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Falling Feathers Studio</h1>
-    <p class="quote">Where creativity, purpose, and second chances take flight.</p>
 
-    <h2>Creative Services Menu</h2>
+  <img src="50573603-5969-4DF5-9009-38EB3E09D039.png" alt="Falling Feathers Studio Logo" class="logo" />
+  
+  <h1>Falling Feathers Studio</h1>
+  <p>Creative media, bold storytelling, and next-gen branding with a purpose. Empowering dreamers, makers, and mission-driven ventures.</p>
 
-    <!-- Sample Accordion Entry -->
-    <div class="accordion-wrapper">
-      <button class="accordion">Custom Songwriting</button>
-      <div class="summary">Turn your story or brand into a one-of-a-kind anthem.</div>
-      <div class="panel"><p>From heartfelt testimonies and tributes to quirky duck anthems—we create personalized lyrics and melodies with emotional impact or just pure fun. Includes options for faith-based, children’s, and custom brand anthems.</p></div>
-    </div>
+  <button class="cta-button" onclick="window.location.href='mailto:studio@fallingfeathers.us'">Work With Us</button>
 
-    
-    <div class="accordion-wrapper">
-      <button class="accordion">Resume & Career Tools</button>
-      <div class="summary">Professionally crafted resumes, cover letters, and career support tools.</div>
-      <div class="panel"><p>Custom resumes, veteran-friendly formats, tailored cover letters, LinkedIn optimization, creative portfolio layouts, and even mock interview prep. We help you present your best self.</p></div>
-    </div>
+  <footer>© 2025 Falling Feathers Studio. All rights reserved.</footer>
 
-    <div class="accordion-wrapper">
-      <button class="accordion">Personal Branding Kits</button>
-      <div class="summary">Show up with confidence—visually, verbally, and professionally.</div>
-      <div class="panel"><p>A full identity starter pack: resume, one-page bio, custom colors and fonts, headshot touch-up, and matching PDF/social assets. Perfect for career changers, speakers, and entrepreneurs.</p></div>
-    </div>
-
-    <div class="accordion-wrapper">
-      <button class="accordion">Small Business Starter Packs</button>
-      <div class="summary">Launch your dream with a logo, brand kit, and startup materials.</div>
-      <div class="panel"><p>Logo design, mission statement help, business cards, flyers, branding templates, and a one-page website—everything you need to launch with clarity and style.</p></div>
-    </div>
-
-    <div class="accordion-wrapper">
-      <button class="accordion">Website Creation & Support</button>
-      <div class="summary">Get a beautiful, mobile-ready website that matches your vision.</div>
-      <div class="panel"><p>Mobile-ready websites with custom design, matching your vibe—whether rustic, peaceful, bold, or playful. Includes SEO setup and training so you’re in control. Optional blog, shop, or donation features too!</p></div>
-    </div>
-
-    <div class="accordion-wrapper">
-      <button class="accordion">Grant & Proposal Support</button>
-      <div class="summary">Get help writing and formatting proposals that win support.</div>
-      <div class="panel"><p>We help you write, organize, and submit winning proposals. Includes editing, formatting, budgeting tools, and support for veteran, community, and nonprofit initiatives.</p></div>
-    </div>
-
-    <div class="accordion-wrapper">
-      <button class="accordion">Community & Church Creative Support</button>
-      <div class="summary">Flyers, event promos, Sunday school materials, and more.</div>
-      <div class="panel"><p>Designs that feel handmade and heartfelt: event flyers, kid’s activity sheets, testimony formatting, sermon slides, and seasonal church content. Custom bundles available for ministries.</p></div>
-    </div>
-
-    <div class="accordion-wrapper">
-      <button class="accordion">Educational & Homestead Resources</button>
-      <div class="summary">Fun, faith-friendly tools for home education and homesteading.</div>
-      <div class="panel"><p>From printable worksheets and startup kits to homeschool resources and duck-themed lesson pages, we create tools that blend faith, fun, and function—for all ages and walks of life.</p></div>
-    </div>
-    
-
-    <footer>
-      <p>Have an idea? Need a quote? <strong>Let’s create something beautiful together.</strong><br/>Email us at <em>hello@fallingfeathers.us</em></p>
-      <p>&copy; Falling Feathers Studio 2025</p>
-    </footer>
-  </div>
-
-  <script>
-    const accordions = document.querySelectorAll(".accordion");
-    accordions.forEach(btn => {
-      btn.addEventListener("click", function() {
-        this.classList.toggle("active");
-        const panel = this.nextElementSibling.nextElementSibling;
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
-      });
-    });
-  </script>
 </body>
 </html>
