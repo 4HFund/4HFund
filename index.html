@@ -2,226 +2,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Falling Feathers Studio</title>
-  <meta name="description" content="Custom songs, chaotic creativity, and coffee-powered art from Falling Feathers Studio.">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <title>Falling Feathers Hollow</title>
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+      position: relative;
     }
     body {
       margin: 0;
-      font-family: 'Raleway', sans-serif;
-      background: radial-gradient(ellipse at center, #1a1a2e, #0f0f1c);
-      color: #fff;
-      transition: background 0.5s ease, color 0.5s ease;
+      font-family: 'Georgia', serif;
+      background: url('https://www.transparenttextures.com/patterns/burlap.png') repeat, #e6dccf;
+      color: #624f3c;
+      cursor: url('https://cur.cursors-4u.net/nature/nat-11/nat1021.cur'), auto;
     }
     .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 20px;
+      margin-top: 0;
+      max-width: 1000px;
+      background: #eed7ab;
+      margin: 2rem auto;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    header {
+      width: 100%;
+      background-color: #eed7ab;
+      padding: 0;
+      margin: 0;
+      border-radius: 10px 10px 0 0;
+    }
+    header img {
+      width: 100%;
+      height: auto;
+      max-height: 250px;
+      object-fit: contain;
+      display: block;
+    }
+    nav {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      border-radius: 0;
+      margin-top: 0;
+      background-color: #c49e78;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1rem;
+      border-radius: 0 0 10px 10px;
+    }
+    nav a {
+      color: #4b3b2b;
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    nav a::before {
+      content: '🪶 ';
+    }
+    h2 {
+      font-family: 'Courier New', Courier, monospace;
+      background: #deb887;
+      display: inline-block;
+      padding: 0.4em 1em;
+      border-radius: 6px;
+      box-shadow: 2px 2px 0 #a87c4c;
+    }
+    .section {
+      margin-bottom: 3rem;
       text-align: center;
     }
-    .logo {
-      width: 200px;
-      display: block;
-      margin: 20px auto 10px;
-    }
-    h1 {
-      font-size: 2.4rem;
-      margin: 0 0 20px;
-      background: linear-gradient(to right, #ff5e00, #ff2f92, #007bff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    p {
-      font-size: 1.1rem;
-      color: #ccc;
-      margin-bottom: 25px;
-    }
-    form {
-      background: #1f1f2e;
-      border-radius: 12px;
-      padding: 25px 20px;
-      margin: 30px auto 20px;
-      text-align: left;
-      width: 100%;
-    }
-    label {
-      display: block;
-      margin-top: 18px;
-      font-weight: bold;
-      color: #ffccaa;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 6px;
-      font-size: 1rem;
-      border-radius: 5px;
-      border: none;
-      background-color: #2c2c3c;
-      color: white;
-    }
-    textarea {
-      resize: vertical;
-    }
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
+    .flock-gallery {
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      margin: 30px auto 0;
-      padding: 14px 28px;
-      border-radius: 50px;
-      background: linear-gradient(to right, #ff5e00, #007bff);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .flock-item {
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    .flock-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .flock-caption {
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      color: #5a4632;
+    }
+    .quote {
+      font-style: italic;
+      margin-top: 1rem;
+      color: #5e4834;
+    }
+    .help-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .help-box {
+      background-color: #fcf6ee;
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+      flex: 1 1 200px;
+      border: 1px solid #e3d3bd;
+    }
+    .blueprint {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .email-signup input[type="email"] {
+      padding: 0.6rem;
+      width: 60%;
+      max-width: 300px;
+      margin-right: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .email-signup button {
+      padding: 0.6rem 1rem;
+      background-color: #7c5c3f;
       color: white;
-      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
       font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .cta-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px #007bff;
-    }
-    .duck-trail {
-      margin-left: 10px;
-      animation: duckFloat 1.2s infinite ease-in-out;
-    }
-    .mode-toggle {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: #ccc;
-      cursor: pointer;
     }
     footer {
       text-align: center;
-      margin-top: 40px;
-      font-size: 0.85rem;
-      color: #777;
+      padding: 1rem 1rem 0.5rem;
+      background-color: #c49e78;
+      color: white;
+      font-size: 0.9rem;
+      border-radius: 0 0 10px 10px;
     }
-    @keyframes duckFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
+    .donate-btn {
+      background-color: #f4d35e;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #4b3f30;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
     }
-    body.light-mode {
-      background: #ffffff;
-      color: #111111;
+    .donate-btn:hover {
+      background-color: #eec643;
     }
-    body.light-mode .container {
-      color: #111111;
+    .feather {
+      position: fixed;
+      top: -50px;
+      font-size: 30px;
+      opacity: 1;
+      animation: fall linear infinite;
+      z-index: 9999;
+      pointer-events: none;
     }
-    body.light-mode p,
-    body.light-mode label {
-      color: #333333;
-    }
-    body.light-mode form {
-      background: #f0f0f0;
-    }
-    body.light-mode input,
-    body.light-mode textarea,
-    body.light-mode select {
-      background-color: #ffffff;
-      color: #000000;
-    }
-    body.light-mode .cta-button {
-      background: linear-gradient(to right, #0072ff, #00c6ff);
-      color: #ffffff;
-    }
-    body.light-mode footer {
-      color: #666666;
-    }
-    body.light-mode h1 {
-      background: linear-gradient(to right, #003399, #990066, #ff6600);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <button class="mode-toggle" aria-label="Toggle Dark/Light Mode" id="themeToggle">🌞</button>
+  <header>
+    <img src="falling_feathers_logo_compressed.jpg" alt="Falling Feathers Hollow Logo">
+  </header>
+  <nav>
+    <a href="index.html">Our Nest</a>
+    <a href="about.html">Our Story</a>
+    <a href="https://www.instagram.com/fallingfeathershollow?igsh=cW12ejlvZ3B2Zmox&utm_source=qr" target="_blank">FeatherGram</a>
+    <a href="profiles.html">Meet Our Flock</a>
+    <a href="sponsor.html">Sponsor</a>
+    <a href="trading-post.html">Trading Post</a>
+    <a href="Videos.html">Feathered Flicks</a>
+  </nav>
+
+  <section class="intro feather-accent">
+    <p style="font-family: 'Dancing Script', cursive; font-size: 2em; font-style: italic;">
+      Falling Feathers Hollow is a peaceful place where animals are given space to thrive, people are reminded to breathe, and purpose is planted in everyday work.
+    </p>
+  </section>
+  <style>
+    .feather-accent {
+      background-color: #fff9f0;
+      padding: 1.5em;
+      margin: 2em auto;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 800px;
+      font-size: 1.15em;
+      color: #4b3b2a;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    .feather-accent::before {
+      content: '🪶';
+      font-size: 2em;
+      position: absolute;
+      top: -0.8em;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .feather-accent p {
+      margin: 0;
+    }
+  </style>
+
+  <div class="audio-player">
+    <audio controls autoplay loop>
+      <source src="falling-feathers-hollow.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <style>
+    .audio-player {
+      text-align: center;
+      padding: 10px 0;
+      background-color: #eed7ab;
+    }
+    .audio-player audio {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
 
   <div class="container">
-    <img src="logo.png" alt="Falling Feathers Studio Logo" class="logo" />
-    <h1>Falling Feathers Studio</h1>
-    <p>We make cool stuff with computers, coffee, and chaotic creativity. Logos, music, websites, or weird—if it’s wild, we’re in. Duck yeah.</p>
-
-    <h2>🎶 Request Your Custom Song</h2>
-    <p>We’ll write, produce, and deliver a full 3-minute song for you — and upload it to Spotify if you want.</p>
-
-    <form id="songForm" action="https://formspree.io/f/your_form_id" method="POST">
-      <label for="name">Your Name:</label>
-      <input type="text" name="Name" required>
-
-      <label for="email">Your Email:</label>
-      <input type="email" name="Email" required>
-
-      <label for="artist">Artist Name (to appear on Spotify):</label>
-      <input type="text" name="Artist Name">
-
-      <label for="theme">What do you want your song to be about?</label>
-      <textarea name="Theme" rows="4" required></textarea>
-
-      <label for="vibe">Style or Vibe:</label>
-      <select name="Vibe">
-        <option>Emotional & Honest</option>
-        <option>Funny/Weird</option>
-        <option>Hype/Motivational</option>
-        <option>Love Song</option>
-        <option>Diss Track</option>
-        <option>Chill & Viby</option>
-        <option>Something Else</option>
-      </select>
-
-      <label for="genre">Preferred Genre:</label>
-      <input type="text" name="Genre">
-
-      <label for="lyrics">Must-have lyrics, quotes, or phrases:</label>
-      <textarea name="Must-Haves" rows="3"></textarea>
-
-      <label for="publish">Do you want us to publish it to Spotify?</label>
-      <select name="Spotify Release">
-        <option>Yes</option>
-        <option>No</option>
-      </select>
-
-      <label for="notes">Anything else we should know?</label>
-      <textarea name="Notes" rows="3"></textarea>
-
-      <div style="text-align: center;">
-        <button type="submit" class="cta-button">Submit Song Request <span class="duck-trail">🦆</span></button>
+    <section class="section">
+      <h2>Meet the Flock</h2>
+      <div class="flock-gallery">
+        <div class="flock-item">
+          <img src="duck_collage_cleaned.png" alt="Waddles and Ming Ming">
+          <p class="flock-caption"><strong>Waddles & Ming Ming</strong><br>Our very first feathered friends.</p>
+        </div>
+        <div class="flock-item">
+          <img src="barred-rock-chicks-falling-feathers.jpg" alt="The Little Chicks">
+          <p class="flock-caption"><strong>The Little Chicks</strong><br>They may be tiny, but their chirps, flaps, and curiosity fill the whole sanctuary with life.</p>
+        </div>
       </div>
-    </form>
+    </section>
 
-    <footer>© 2025 Falling Feathers Studio. Quack responsibly.</footer>
+    <section class="section tiktok-section" style="background-color: #fdfaf5; padding: 2rem 1rem; text-align: center;">
+      <h2 style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: #7c5c3c; margin-bottom: 1rem;">
+        Feathered Friends in Action
+      </h2>
+      <div style="display: flex; justify-content: center;">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fallingfeathersstudio/video/7340662600791694634" data-video-id="7340662600791694634" style="max-width: 605px; min-width: 325px;">
+          <section>
+            <a target="_blank" title="@fallingfeathersstudio" href="https://www.tiktok.com/@fallingfeathersstudio?refer=embed">@fallingfeathersstudio</a>
+            <p>Welcome to Falling Feathers Hollow—a sanctuary where rescued animals get second chances and people find peace. Follow our journey from tiny feathers to big dreams! Join our flock: FallingFeathers.us</p>
+            <a target="_blank" title="♬ original sound - Falling Feathers Studio" href="https://www.tiktok.com/music/original-sound-7491061746828888874?refer=embed">♬ original sound - Falling Feathers Studio</a>
+          </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Why We Roost</h2>
+      <p>We believe second chances aren’t just for animals—they’re for people too. At Falling Feathers Hollow, we rescue the overlooked, love the forgotten, and create a space where healing happens naturally.</p>
+      <div class="quote">“Hope begins with a feather.”</div>
+    </section>
+
+    <section class="section">
+      <h2>Lend a Feather</h2>
+      <div class="help-options">
+        <div class="help-box"><a href="https://www.zeffy.com/en-US/fundraising/support-falling-feathers-hollow" target="_blank"><strong>Donate</strong><br>Support our daily work</a></div>
+        <div class="help-box"><strong>Sponsor</strong><br>Give monthly to a friend</div>
+        <div class="help-box">
+          <a href="mailto:?subject=Falling Feathers Hollow&body=Check out this beautiful sanctuary: https://fallingfeathershollow.com">
+            <strong>Share</strong> – Send our story by email
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>A Nest in the Making</h2>
+      <p>This is where our vision takes shape — a sanctuary designed with love, built feather by feather, step by step.</p>
+      <img src="falling_feathers_blueprint_web_ready.jpg" alt="Sanctuary blueprint" class="blueprint" />
+    </section>
+
+    <section class="section">
+      <h2>Join the Flock</h2>
+      <p>Sign up to receive updates, animal stories, and big announcements.</p>
+      <form class="email-signup">
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; Falling Feathers Hollow 2025. All rights reserved.</p>
+    </footer>
   </div>
 
   <script>
-    const toggle = document.getElementById('themeToggle');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      toggle.textContent = document.body.classList.contains('light-mode') ? '🌜' : '🌞';
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-      if (prefersLight) {
-        document.body.classList.add('light-mode');
-        toggle.textContent = '🌜';
-      }
-    });
-
-    document.querySelector('#songForm').addEventListener('submit', () => {
-      const button = document.querySelector('.cta-button');
-      button.innerHTML = 'Submitting... <span class="duck-trail">🦆</span>';
-    });
+    const feathers = 20;
+    for (let i = 0; i < feathers; i++) {
+      const feather = document.createElement('div');
+      feather.classList.add('feather');
+      feather.innerText = "🪶";
+      feather.style.left = Math.random() * 100 + 'vw';
+      feather.style.animationDuration = (10 + Math.random() * 10) + 's';
+      document.body.appendChild(feather);
+    }
   </script>
 </body>
 </html>
