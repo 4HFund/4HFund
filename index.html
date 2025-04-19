@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta property="og:image" content="https://yourdomain.com/images/feathers-preview.jpg" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Falling Feathers Hollow</title>
@@ -68,21 +69,7 @@
       transition: color 0.2s ease;
     }
 
-    .nav-row a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -2px;
-      left: 0;
-      background-color: white;
-      transition: width 0.3s ease-in-out;
-    }
-
-    .nav-row a:hover::after,
-    .nav-row a.active::after {
-      width: 100%;
-    }
+    
 
     .nav-row a.active {
       font-weight: bold;
@@ -253,6 +240,32 @@
       border-radius: 12px;
       box-shadow: 0 1px 5px rgba(0,0,0,0.04);
     }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    button {
+      background: #a8724d;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.5px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #8c5e3b;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
     </style>
 </head>
 <body>
@@ -274,12 +287,12 @@
     </div>
   </nav>
 
-  <section class="intro">
+  <section class="intro fade-in">
     Falling Feathers Hollow is a peaceful place where animals are given space to thrive, people are reminded to breathe, and purpose is planted in everyday work.
   </section>
 
   <div class="container">
-    <section class="content-block">
+    <section class="content-block fade-in">
       <h2>Meet the Flock</h2>
       <div class="flock-gallery">
         <div class="flock-item">
@@ -293,19 +306,19 @@
       </div>
     </section>
 
-    <section class="content-block">
+    <section class="content-block fade-in">
       <h2>Why We Roost</h2>
       <p>We believe second chances aren’t just for animals—they’re for people too. At Falling Feathers Hollow, we rescue the overlooked, love the forgotten, and create a space where healing happens naturally.</p>
       <div class="quote">“Hope begins with a feather.”</div>
     </section>
 
-    <section class="content-block">
+    <section class="content-block fade-in">
       <h2>A Nest in the Making</h2>
       <p>This is where our vision takes shape — a sanctuary designed with love, built feather by feather, step by step.</p>
       <img src="falling_feathers_blueprint_web_ready.jpg" alt="Sanctuary blueprint" class="blueprint"/>
     </section>
 
-    <section class="content-block">
+    <section class="content-block fade-in">
       <h2>Join the Flock</h2>
       <p>Sign up to receive updates, animal stories, and big announcements.</p>
       <form class="email-signup">
@@ -314,7 +327,7 @@
       </form>
     </section>
 
-    <section class="content-block">
+    <section class="content-block fade-in">
       <h2>FeatherGram Highlights</h2>
       <div class="instagram-wrapper">
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIcOi7VJQGa/?igsh=b3lwbmtocGRod2tj" data-instgrm-version="14" style="max-width:540px;"></blockquote>
@@ -337,5 +350,19 @@
   </footer>
 
   <script async src="https://www.instagram.com/embed.js"></script>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fade => observer.observe(fade));
+  </script>
 </body>
 </html>
