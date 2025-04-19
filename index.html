@@ -25,6 +25,7 @@
     }
 
     header img {
+      margin: 1rem auto 0.3rem;
       max-width: 220px;
       height: auto;
       margin: 1.5rem auto 0.5rem;
@@ -32,6 +33,7 @@
     }
 
     .navbar {
+      padding: 0.4rem 1rem;
       position: sticky;
       top: 0;
       width: 100%;
@@ -45,6 +47,10 @@
     }
 
     .nav-row {
+      max-width: 600px;
+      margin: 0.3rem auto;
+      flex-wrap: wrap;
+      justify-content: center;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -93,6 +99,20 @@
 
     .intro {
       background-color: #fff9f0;
+      padding: 1.2em;
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 2em auto 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.2em;
+      line-height: 1.7;
+      font-style: italic;
+    }
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      background-color: #fff9f0;
       padding: 1.5em;
       border-radius: 12px;
       max-width: 800px;
@@ -104,6 +124,18 @@
     }
 
     .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section.content-block {
+      background-color: #fff4e6;
+      border-radius: 12px;
+      padding: 2rem 1rem 3rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      margin-bottom: 2rem;
+    }
       max-width: 1000px;
       margin: 0 auto;
       padding: 0 2rem;
@@ -206,7 +238,22 @@
       color: white;
       font-size: 0.9rem;
     }
-  </style>
+  
+    @media (max-width: 480px) {
+      .nav-row {
+        gap: 1rem;
+        padding: 0 0.75rem;
+      }
+    }
+    
+    .content-block {
+      background: #fffaf1;
+      margin: 2rem auto;
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.04);
+    }
+    </style>
 </head>
 <body>
 
@@ -232,7 +279,7 @@
   </section>
 
   <div class="container">
-    <section>
+    <section class="content-block">
       <h2>Meet the Flock</h2>
       <div class="flock-gallery">
         <div class="flock-item">
@@ -246,19 +293,19 @@
       </div>
     </section>
 
-    <section>
+    <section class="content-block">
       <h2>Why We Roost</h2>
       <p>We believe second chances aren’t just for animals—they’re for people too. At Falling Feathers Hollow, we rescue the overlooked, love the forgotten, and create a space where healing happens naturally.</p>
       <div class="quote">“Hope begins with a feather.”</div>
     </section>
 
-    <section>
+    <section class="content-block">
       <h2>A Nest in the Making</h2>
       <p>This is where our vision takes shape — a sanctuary designed with love, built feather by feather, step by step.</p>
       <img src="falling_feathers_blueprint_web_ready.jpg" alt="Sanctuary blueprint" class="blueprint"/>
     </section>
 
-    <section>
+    <section class="content-block">
       <h2>Join the Flock</h2>
       <p>Sign up to receive updates, animal stories, and big announcements.</p>
       <form class="email-signup">
@@ -267,7 +314,7 @@
       </form>
     </section>
 
-    <section>
+    <section class="content-block">
       <h2>FeatherGram Highlights</h2>
       <div class="instagram-wrapper">
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIcOi7VJQGa/?igsh=b3lwbmtocGRod2tj" data-instgrm-version="14" style="max-width:540px;"></blockquote>
