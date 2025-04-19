@@ -48,16 +48,13 @@
     }
 
     .nav-row {
-      max-width: 600px;
-      margin: 0.3rem auto;
-      flex-wrap: wrap;
-      justify-content: center;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin: 0.3rem 0;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 0.5rem 1rem;
+  max-width: 100%;
+}
 
     .nav-row a {
       color: white;
@@ -227,11 +224,13 @@
     }
   
     @media (max-width: 480px) {
-      .nav-row {
-        gap: 1rem;
-        padding: 0 0.75rem;
-      }
-    }
+  .nav-row {
+    gap: 0.75rem;
+  }
+  .nav-row a {
+    font-size: 0.95rem;
+  }
+}
     
     .content-block {
       background: #fffaf1;
@@ -279,8 +278,6 @@
       <a href="index.html" class="active">Our Nest</a>
       <a href="about.html">Our Story</a>
       <a href="profiles.html">Meet Our Flock</a>
-    </div>
-    <div class="nav-row">
       <a href="sponsor.html">Sponsor</a>
       <a href="studio/index.html">Studio</a>
       <a href="trading-post.html">Trading Post</a>
