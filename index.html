@@ -5,7 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Falling Feathers Hollow</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap&family=Inter:wght@500&display=swap" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Lora&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --primary-bg: #f4e0c5;
@@ -13,13 +14,9 @@
       --text-dark: #4b3b2a;
     }
 
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
       font-family: 'Inter', sans-serif;
       background-color: var(--primary-bg);
       color: var(--text-dark);
@@ -38,42 +35,60 @@
       position: sticky;
       top: 0;
       width: 100%;
-      background: rgba(139, 94, 60, 0.95);
-      display: flex;
-      justify-content: center;
-      padding: 0.5rem 1rem;
+      background: rgba(139, 94, 60, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       z-index: 999;
+      padding: 0.75rem 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
-    .nav-links {
+    .nav-row {
       display: flex;
-      gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
+      gap: 2rem;
+      margin: 0.3rem 0;
     }
 
-    .nav-links a {
+    .nav-row a {
       color: white;
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      font-family: 'Lora', serif;
       position: relative;
-      padding: 0.25rem;
-      transition: 0.2s ease;
+      padding: 0.25rem 0.5rem;
+      transition: color 0.2s ease;
     }
 
-    .nav-links a::after {
+    .nav-row a::after {
       content: '';
       position: absolute;
       width: 0%;
       height: 2px;
-      bottom: 0;
+      bottom: -2px;
       left: 0;
       background-color: white;
       transition: width 0.3s ease-in-out;
     }
 
-    .nav-links a:hover::after {
+    .nav-row a:hover::after,
+    .nav-row a.active::after {
       width: 100%;
+    }
+
+    .nav-row a.active {
+      font-weight: bold;
+      color: #ffeac4;
+    }
+
+    .nav-row a:hover::before {
+      content: "🪶";
+      position: absolute;
+      left: -1.3rem;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
     }
 
     .intro {
@@ -140,6 +155,10 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
 
+    .email-signup {
+      margin-top: 1rem;
+    }
+
     .email-signup input[type="email"] {
       padding: 0.6rem;
       width: 60%;
@@ -195,18 +214,18 @@
     <img src="falling_feathers_logo_compressed.png" alt="Falling Feathers Hollow Logo" />
   </header>
 
-  <div class="navbar">
-    <div class="nav-links">
-      <a href="index.html">Our Nest</a>
+  <nav class="navbar">
+    <div class="nav-row">
+      <a href="index.html" class="active">Our Nest</a>
       <a href="about.html">Our Story</a>
-      <a href="https://www.instagram.com/fallingfeathershollow?igsh=cW12ejlvZ3B2Zmox" target="_blank">FeatherGram</a>
       <a href="profiles.html">Meet Our Flock</a>
-      <a href="sponsor.html">Sponsor</a>
-      <a href="trading-post.html">Trading Post</a>
-      <a href="Videos.html">Feathered Flicks</a>
-      <a href="studio/index.html">Studio</a>
     </div>
-  </div>
+    <div class="nav-row">
+      <a href="sponsor.html">Sponsor</a>
+      <a href="studio/index.html">Studio</a>
+      <a href="trading-post.html">Trading Post</a>
+    </div>
+  </nav>
 
   <section class="intro">
     Falling Feathers Hollow is a peaceful place where animals are given space to thrive, people are reminded to breathe, and purpose is planted in everyday work.
@@ -264,7 +283,10 @@
   </div>
 
   <footer>
-    <p>© Falling Feathers Hollow 2025. All rights reserved.</p>
+    <p>
+        © Falling Feathers Hollow 2025. All rights reserved.<br>
+        <a href="mailto:info@fallingfeathers.us">info@fallingfeathers.us</a>
+    </p>
   </footer>
 
   <script async src="https://www.instagram.com/embed.js"></script>
