@@ -2,51 +2,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meet Our Flock - Falling Feathers Hollow</title>
+  <meta property="og:image" content="https://yourdomain.com/images/feathers-preview.jpg" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Lora&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --primary-bg: #f4e0c5;
+      --accent: #d1a76f;
+      --text-dark: #4b3b2a;
+    }
+
     html, body {
-      height: 100%;
-      overflow-x: hidden;
-      position: relative;
-    }
-    body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background: url('https://www.transparenttextures.com/patterns/burlap.png') repeat, #e6dccf;
-      color: #624f3c;
-      cursor: url('https://cur.cursors-4u.net/nature/nat-11/nat1021.cur'), auto;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--primary-bg);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      text-align: center;
+      scroll-behavior: smooth;
     }
-    header {
-      width: 100%;
-      background-color: #eed7ab;
-      border-radius: 10px 10px 0 0;
-    }
+
     header img {
-      width: 100%;
-      max-height: 250px;
-      object-fit: contain;
+      max-width: 220px;
+      height: auto;
+      margin: 1.5rem auto 0.5rem;
       display: block;
     }
-    nav {
-      background-color: #c49e78;
+
+    .navbar {
+      padding: 0.75rem 1rem;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(139, 94, 60, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-row {
+      max-width: 600px;
+      margin: 0.3rem auto;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      padding: 1rem;
-      border-radius: 0 0 10px 10px;
+      flex-wrap: wrap;
+      gap: 2rem;
     }
-    nav a {
-      color: #4b3b2b;
-      margin: 0.5rem;
+
+    .nav-row a {
+      color: white;
       text-decoration: none;
+      font-size: 1rem;
+      font-family: 'Lora', serif;
+      position: relative;
+      padding: 0.25rem 0.5rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-row a:hover::before {
+      content: "🪶";
+      position: absolute;
+      left: -1.3rem;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-row a.active {
       font-weight: bold;
+      color: #ffeac4;
     }
-    nav a::before {
-      content: '🪶 ';
+
+    .content-block {
+      background: #fffaf1;
+      margin: 2rem auto;
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.04);
+      max-width: 1000px;
     }
+
     h2 {
       font-family: 'Courier New', Courier, monospace;
       background: #deb887;
@@ -54,62 +94,145 @@
       padding: 0.4em 1em;
       border-radius: 6px;
       box-shadow: 2px 2px 0 #a87c4c;
+      margin-bottom: 1rem;
     }
-    .section {
-      text-align: center;
-    }
+
     .flock-gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
-      margin: 2rem;
+      margin-top: 2rem;
     }
+
     .flock-card {
-      background-color: #fcf6ee;
+      background-color: #fff9f0;
       border-radius: 10px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.08);
       width: 300px;
       overflow: hidden;
       text-align: center;
     }
+
     .flock-card img {
       width: 100%;
+      border-radius: 6px 6px 0 0;
     }
+
     .flock-card h3 {
       font-family: 'Dancing Script', cursive;
       margin: 0.8rem 0 0.4rem;
       font-size: 1.5rem;
     }
+
     .flock-card p {
       font-size: 0.95rem;
       padding: 0 1rem 1rem;
     }
+
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #c49e78;
+      background-color: var(--accent);
       color: white;
       font-size: 0.9rem;
-      border-radius: 0 0 10px 10px;
     }
-  </style>
+  
+    .flock-card {
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .flock-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+      background-color: #fffaf1;
+      margin: 5% auto;
+      padding: 2rem;
+      border: 1px solid #888;
+      border-radius: 12px;
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-content p {
+      font-size: 1rem;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #5a4632;
+      cursor: pointer;
+      padding: 0 1rem;
+      font-weight: bold;
+    }
+
+    #prevBtn { left: 0; }
+    #nextBtn { right: 0; }
+
+    .close {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    </style>
 </head>
 <body>
+
   <header>
-    <img src="falling_feathers_logo_compressed.jpg" alt="Falling Feathers Hollow Logo">
+    <img src="falling_feathers_logo_compressed.png" alt="Falling Feathers Hollow Logo" />
   </header>
-  <nav>
-    <a href="index.html">Our Nest</a>
-    <a href="about.html">Our Story</a>
-    <a href="https://www.instagram.com/fallingfeathershollow" target="_blank">FeatherGram</a>
-    <a href="profiles.html">Meet Our Flock</a>
-    <a href="sponsor.html">Sponsor</a>
-    <a href="shop.html">Trading Post</a>
-    <a href="videos.html">Feathered Flicks</a>
+
+  <nav class="navbar">
+    <div class="nav-row">
+      <a href="index.html">Our Nest</a>
+      <a href="about.html">Our Story</a>
+      <a href="profiles.html" class="active">Meet Our Flock</a>
+    </div>
+    <div class="nav-row">
+      <a href="sponsor.html">Sponsor</a>
+      <a href="studio/index.html">Studio</a>
+      <a href="trading-post.html">Trading Post</a>
+    </div>
   </nav>
 
-  <section class="section">
+  <section class="content-block fade-in">
     <h2>Meet Our Flock</h2>
     <div class="flock-gallery">
       <div class="flock-card"><img src="duck1.jpg"><h3>Waddles</h3><p>The loudest splash in the pond. Always the first to quack an opinion.</p></div>
@@ -119,12 +242,71 @@
       <div class="flock-card"><img src="chick3.jpg"><h3>Pepper</h3><p>Feisty and full of flair. Pecks first, asks questions never.</p></div>
       <div class="flock-card"><img src="chick4.jpg"><h3>Patty</h3><p>Soft-hearted, snack-motivated, and surprisingly sneaky.</p></div>
       <div class="flock-card"><img src="chick5.jpg"><h3>Popsicle</h3><p>Cool as her name, with a waddle that melts hearts and a stare that means business.</p></div>
-      <div class="flock-card"><img src="chick6.jpg"><h3>Name TBD</h3><p>Taking name suggestions... but not from the rooster.</p></div>
+      <div class="flock-card"><img src="chick6.jpg"><h3>McChicken</h3><p>Proudly named, constantly pecking, and surprisingly photogenic.</p></div>
     </div>
-  </section>
+  
+    </section>
+
+    <div id="flockModal" class="modal">
+      <div class="modal-content">
+        <button class="nav-btn" id="prevBtn">&#8592;</button>
+        <button class="nav-btn" id="nextBtn">&#8594;</button>
+        <span class="close">&times;</span>
+        <img id="modalImg" src="" alt="" />
+        <h3 id="modalName"></h3>
+        <p id="modalDesc"></p>
+      </div>
+    </div>
+    
 
   <footer>
-    <p>&copy; Falling Feathers Hollow 2025. All rights reserved.</p>
+    <p>
+      © Falling Feathers Hollow 2025. All rights reserved.<br>
+      <a href="mailto:info@fallingfeathers.us">info@fallingfeathers.us</a>
+    </p>
   </footer>
+
+  <script>
+    const flockCards = document.querySelectorAll('.flock-card');
+    const modal = document.getElementById('flockModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalName = document.getElementById('modalName');
+    const modalDesc = document.getElementById('modalDesc');
+    const closeBtn = document.querySelector('.close');
+
+    
+    let currentIndex = 0;
+
+    function showCard(index) {
+      const card = flockCards[index];
+      if (!card) return;
+      modalImg.src = card.querySelector('img').src;
+      modalName.textContent = card.querySelector('h3').textContent;
+      modalDesc.textContent = card.querySelector('p').textContent;
+    }
+
+    flockCards.forEach((card, i) => {
+      card.addEventListener('click', () => {
+        modal.style.display = 'block'; currentIndex = i; showCard(i);
+        modalImg.src = card.querySelector('img').src;
+        modalName.textContent = card.querySelector('h3').textContent;
+        modalDesc.textContent = card.querySelector('p').textContent;
+      });
+    });
+
+    closeBtn.onclick = () => modal.style.display = 'none';
+    window.onclick = e => { if (e.target == modal) modal.style.display = 'none'; };
+
+    document.getElementById('nextBtn').onclick = () => {
+      currentIndex = (currentIndex + 1) % flockCards.length;
+      showCard(currentIndex);
+    };
+
+    document.getElementById('prevBtn').onclick = () => {
+      currentIndex = (currentIndex - 1 + flockCards.length) % flockCards.length;
+      showCard(currentIndex);
+    };
+    
+  </script>
 </body>
 </html>
