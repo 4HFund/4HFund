@@ -1,65 +1,108 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Trading Post | Falling Feathers Hollow</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Lora&display=swap" rel="stylesheet"/>
   <style>
-    body {
+    :root {
+      --primary-bg: #f4e0c5;
+      --accent: #d1a76f;
+      --text-dark: #4b3b2a;
+    }
+
+    html, body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background: url('https://www.transparenttextures.com/patterns/burlap.png') repeat, #e6dccf;
-      color: #4b3e2d;
-    }
-    header {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--primary-bg);
+      color: var(--text-dark);
+      overflow-x: hidden;
       text-align: center;
-      padding: 2rem;
-      background-color: #eed7ab;
+      scroll-behavior: smooth;
     }
+
     header img {
-      max-width: 200px;
+      max-width: 220px;
+      height: auto;
+      margin: 1.5rem auto 0.5rem;
+      display: block;
     }
-    nav {
-      background-color: #c49e78;
+
+    .navbar {
+      padding: 0.75rem 1rem;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(139, 94, 60, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-row {
+      max-width: 600px;
+      margin: 0.3rem auto;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      padding: 1rem;
+      gap: 2rem;
     }
-    nav a {
-      color: #4b3b2b;
-      margin: 0.5rem 1rem;
+
+    .nav-row a {
+      color: white;
       text-decoration: none;
+      font-size: 1rem;
+      font-family: 'Lora', serif;
+      position: relative;
+      padding: 0.25rem 0.5rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-row a:hover::before {
+      content: "🪶";
+      position: absolute;
+      left: -1.3rem;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-row a.active {
       font-weight: bold;
-      font-size: 1.1em;
+      color: #ffeac4;
     }
-    nav a::before {
-      content: '🪶 ';
-    }
-    .intro {
-      text-align: center;
-      background-color: #fff9f0;
+
+    .content-block {
+      background: #fffaf1;
       margin: 2rem auto;
-      padding: 1.5rem;
-      max-width: 800px;
-      font-size: 1.3em;
+      padding: 2rem 1.5rem;
       border-radius: 12px;
-      font-family: 'Dancing Script', cursive;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 5px rgba(0,0,0,0.04);
+      max-width: 1000px;
     }
-    .preview-section {
-      text-align: center;
-      padding: 2rem;
-    }
-    .preview-section h2 {
-      background-color: #deb887;
+
+    h2 {
+      font-family: 'Courier New', Courier, monospace;
+      background: #deb887;
       display: inline-block;
-      padding: 0.5em 1.5em;
-      border-radius: 8px;
-      font-family: 'Courier New', monospace;
+      padding: 0.4em 1em;
+      border-radius: 6px;
       box-shadow: 2px 2px 0 #a87c4c;
+      margin-bottom: 1rem;
     }
+
+    .intro {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.4rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
     .merch-preview {
       display: flex;
       flex-wrap: wrap;
@@ -67,42 +110,61 @@
       gap: 2rem;
       margin-top: 2rem;
     }
+
     .merch-preview img {
-      max-width: 90%;
-      width: 600px;
+      max-width: 100%;
+      width: 300px;
       border-radius: 12px;
       box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
     }
+
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #c49e78;
+      background-color: var(--accent);
       color: white;
-      font-size: 0.9em;
+      font-size: 0.9rem;
       margin-top: 2rem;
+    }
+
+    @media (max-width: 500px) {
+      .nav-row {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .nav-row a {
+        font-size: 0.95rem;
+        padding: 0.25rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="falling_feathers_logo_compressed.jpg" alt="Falling Feathers Hollow Logo" />
+    <img src="falling_feathers_logo_compressed.png" alt="Falling Feathers Hollow Logo" />
   </header>
 
-  <nav>
-    <a href="index.html">Our Nest</a>
-    <a href="about.html">Our Story</a>
-    <a href="https://www.instagram.com/fallingfeathershollow" target="_blank">FeatherGram</a>
-    <a href="profiles.html">Meet Our Flock</a>
-    <a href="sponsor.html">Sponsor an Animal</a>
-    <a href="shop.html">The Trading Post</a>
-    <a href="videos.html">Feathered Flicks</a>
+  <nav class="navbar">
+    <div class="nav-row">
+      <a href="index.html">Our Nest</a>
+      <a href="about.html">Our Story</a>
+      <a href="profiles.html">Meet Our Flock</a>
+    </div>
+    <div class="nav-row">
+      <a href="sponsor.html">Sponsor</a>
+      <a href="studio/index.html">Studio</a>
+      <a href="trading-post.html" class="active">Trading Post</a>
+    </div>
   </nav>
 
-  <section class="intro">
-    Our rustic Trading Post is almost open! While we build out inventory, here’s a peek at what’s coming. Whether you're into feathers, flannel, or faith—there’s something here for every heart.
-  </section>
+  <section class="content-block">
+    <div class="intro">
+      Our rustic Trading Post is almost open! While we build out inventory, here’s a peek at what’s coming.
+      Whether you're into feathers, flannel, or faith—there’s something here for every heart.
+    </div>
 
-  <section class="preview-section">
     <h2>Coming Soon</h2>
     <div class="merch-preview">
       <img src="veteran-merch-preview.png" alt="Veteran Merch Preview" />
@@ -112,7 +174,8 @@
   </section>
 
   <footer>
-    &copy; Falling Feathers Hollow 2025. All rights reserved.
+    &copy; Falling Feathers Hollow 2025. All rights reserved.<br>
+    <a href="mailto:info@fallingfeathers.us" style="color:white;">info@fallingfeathers.us</a>
   </footer>
 </body>
 </html>
