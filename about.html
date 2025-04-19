@@ -2,123 +2,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Story - Falling Feathers Hollow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Lora&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --primary-bg: #f4e0c5;
+      --accent: #d1a76f;
+      --text-dark: #4b3b2a;
+    }
+
     html, body {
-      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--primary-bg);
+      color: var(--text-dark);
       overflow-x: hidden;
-      position: relative;
-    }
-    body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background: url('https://www.transparenttextures.com/patterns/burlap.png') repeat, #e6dccf;
-      color: #624f3c;
-      cursor: url('https://cur.cursors-4u.net/nature/nat-11/nat1021.cur'), auto;
+      text-align: center;
+      scroll-behavior: smooth;
     }
-    header {
-      width: 100%;
-      background-color: #eed7ab;
-      border-radius: 10px 10px 0 0;
-    }
+
     header img {
-      width: 100%;
-      max-height: 250px;
-      object-fit: contain;
+      max-width: 220px;
+      height: auto;
+      margin: 1.5rem auto 0.5rem;
       display: block;
     }
-    nav {
-      background-color: #c49e78;
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(139, 94, 60, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 999;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-row {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      padding: 1rem;
-      border-radius: 0 0 10px 10px;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 600px;
+      margin: 0.3rem auto;
     }
-    nav a {
-      color: #4b3b2b;
-      margin: 0.5rem;
+
+    .nav-row a {
+      color: white;
       text-decoration: none;
+      font-size: 1rem;
+      font-family: 'Lora', serif;
+      position: relative;
+      padding: 0.25rem 0.5rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-row a:hover::before {
+      content: "🪶";
+      position: absolute;
+      left: -1.3rem;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-row a.active {
       font-weight: bold;
+      color: #ffeac4;
     }
-    nav a::before {
-      content: '🪶 ';
-    }
-    .section {
-      text-align: center;
+
+    .content-block {
+      background: #fffaf1;
       margin: 2rem auto;
-      max-width: 1000px;
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.04);
+      max-width: 800px;
+      text-align: left;
     }
-    .section h2 {
+
+    h2 {
       font-family: 'Courier New', Courier, monospace;
       background: #deb887;
       display: inline-block;
       padding: 0.4em 1em;
       border-radius: 6px;
       box-shadow: 2px 2px 0 #a87c4c;
-    }
-    .story-box {
-      background-color: #fff9f0;
-      border-radius: 10px;
-      padding: 2rem;
-      margin-top: 2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: left;
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-    .quote {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.7rem;
-      color: #5a4632;
-      margin: 2rem 0;
+      margin-bottom: 1rem;
       text-align: center;
     }
+
+    .quote {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      color: #5a4632;
+      margin: 2rem auto;
+      text-align: center;
+      max-width: 600px;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #c49e78;
+      background-color: var(--accent);
       color: white;
       font-size: 0.9rem;
-      border-radius: 0 0 10px 10px;
     }
+
   </style>
 </head>
 <body>
+
   <header>
-    <img src="falling_feathers_logo_compressed.jpg" alt="Falling Feathers Hollow Logo">
+    <img src="falling_feathers_logo_compressed.png" alt="Falling Feathers Hollow Logo" />
   </header>
-  <nav>
-    <a href="index.html">Our Nest</a>
-    <a href="about.html">Our Story</a>
-    <a href="https://www.instagram.com/fallingfeathershollow" target="_blank">FeatherGram</a>
-    <a href="profiles.html">Meet Our Flock</a>
-    <a href="sponsor.html">Sponsor</a>
-    <a href="shop.html">Trading Post</a>
-    <a href="videos.html">Feathered Flicks</a>
+
+  <nav class="navbar">
+    <div class="nav-row">
+      <a href="index.html">Our Nest</a>
+      <a href="about.html" class="active">Our Story</a>
+      <a href="profiles.html">Meet Our Flock</a>
+    </div>
+    <div class="nav-row">
+      <a href="sponsor.html">Sponsor</a>
+      <a href="studio/index.html">Studio</a>
+      <a href="trading-post.html">Trading Post</a>
+    </div>
   </nav>
 
-  <section class="section">
+  <section class="content-block">
     <h2>Our Story</h2>
-    <div class="story-box">
-      <p><strong>Falling Feathers Hollow is still in its early days—raw land, big dreams, and a growing flock.</strong></p>
+    <p><strong>Falling Feathers Hollow is still in its early days—raw land, big dreams, and a growing flock.</strong></p>
 
-      <p>It started with two ducks and a spark of inspiration: what if a simple piece of land could become a place of second chances? A place where animals feel safe, people feel seen, and purpose is found in the everyday care of something meaningful?</p>
+    <p>It started with two ducks and a spark of inspiration: what if a simple piece of land could become a place of second chances? A place where animals feel safe, people feel seen, and purpose is found in the everyday care of something meaningful?</p>
 
-      <p>We’re building this sanctuary from the ground up—one fence post, one feather, one morning chore at a time. The barn isn't finished. The fencing still needs work. But the heart? That's already here.</p>
+    <p>We’re building this sanctuary from the ground up—one fence post, one feather, one morning chore at a time. The barn isn't finished. The fencing still needs work. But the heart? That's already here.</p>
 
-      <p>We’re a family stepping out in faith, creating a space that blends animal care, personal healing, and community. This isn’t just about rescue—it’s about restoration, reflection, and revival.</p>
+    <p>We’re a family stepping out in faith, creating a space that blends animal care, personal healing, and community. This isn’t just about rescue—it’s about restoration, reflection, and revival.</p>
 
-      <p>Every little quack and chirp fuels our mission. And while we’re not “there” yet, we’re grateful for every step along the way—and for folks like you walking it with us.</p>
-    </div>
-
-    <div class="quote">
-      “This is what starting over looks like: messy, meaningful, and full of hope.”
-    </div>
+    <p>Every little quack and chirp fuels our mission. And while we’re not “there” yet, we’re grateful for every step along the way—and for folks like you walking it with us.</p>
   </section>
+
+  <div class="quote">
+    “This is what starting over looks like: messy, meaningful, and full of hope.”
+  </div>
 
   <footer>
     <p>&copy; Falling Feathers Hollow 2025. All rights reserved.</p>
