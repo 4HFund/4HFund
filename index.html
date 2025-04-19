@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,43 +22,55 @@
       overflow-x: hidden;
     }
 
-    header img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
-
     nav {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 0.5rem;
-      justify-items: center;
-      align-items: center;
-      background-color: var(--primary-bg);
+      text-align: center;
+      background: linear-gradient(145deg, #a47148, #8b5e3c);
       padding: 1rem;
-      font-size: 0.95rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      font-family: 'Georgia', serif;
+      border-bottom: 2px solid #d1a76f;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-logo {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-logo img {
+      height: 100px;
+      object-fit: contain;
     }
 
     nav a {
-      color: #3a2f22;
+      color: #fff;
       text-decoration: none;
       font-weight: bold;
-      display: block;
-      padding: 0.4rem 0.6rem;
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
-      text-align: center;
+      position: relative;
+      padding: 0.4rem;
+      transition: color 0.3s;
+      font-size: 0.95rem;
     }
 
-    nav a:hover {
-      background-color: #b58962;
-      color: white;
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      bottom: -4px;
+      left: 0;
+      transition: width 0.3s;
     }
 
-    nav a::before {
-      content: '🪶 ';
+    nav a:hover::after {
+      width: 100%;
     }
 
     .intro {
@@ -196,90 +209,92 @@
   </style>
 </head>
 <body>
-<header>
-  <img src="falling_feathers_logo_compressed.jpg" alt="Falling Feathers Hollow Logo"/>
-</header>
-<nav>
-  <a href="index.html">Our Nest</a>
-  <a href="about.html">Our Story</a>
-  <a href="https://www.instagram.com/fallingfeathershollow?igsh=cW12ejlvZ3B2Zmox" target="_blank">FeatherGram</a>
-  <a href="profiles.html">Meet Our Flock</a>
-  <a href="sponsor.html">Sponsor</a>
-  <a href="trading-post.html">Trading Post</a>
-  <a href="Videos.html">Feathered Flicks</a>
-  <a href="studio/index.html">Studio</a>
-</nav>
-
-<section class="intro">
-  <p>Falling Feathers Hollow is a peaceful place where animals are given space to thrive, people are reminded to breathe, and purpose is planted in everyday work.</p>
-</section>
-
-<div class="container">
-  <section>
-    <h2>Meet the Flock</h2>
-    <div class="flock-gallery">
-      <div class="flock-item">
-        <img src="duck_collage_cleaned.png" alt="Waddles and Ming Ming"/>
-        <p><strong>Waddles & Ming Ming</strong><br/>Our very first feathered friends.</p>
-      </div>
-      <div class="flock-item">
-        <img src="barred-rock-chicks-falling-feathers.jpg" alt="The Little Chicks"/>
-        <p><strong>The Little Chicks</strong><br/>Their chirps, flaps, and curiosity fill the whole sanctuary with life.</p>
-      </div>
+  <nav>
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="falling_feathers_logo_compressed.jpg" alt="Falling Feathers Hollow Logo"/>
+      </a>
     </div>
+    <a href="index.html">Our Nest</a>
+    <a href="about.html">Our Story</a>
+    <a href="https://www.instagram.com/fallingfeathershollow?igsh=cW12ejlvZ3B2Zmox" target="_blank">FeatherGram</a>
+    <a href="profiles.html">Meet Our Flock</a>
+    <a href="sponsor.html">Sponsor</a>
+    <a href="trading-post.html">Trading Post</a>
+    <a href="Videos.html">Feathered Flicks</a>
+    <a href="studio/index.html">Studio</a>
+  </nav>
+
+  <section class="intro">
+    <p>Falling Feathers Hollow is a peaceful place where animals are given space to thrive, people are reminded to breathe, and purpose is planted in everyday work.</p>
   </section>
 
-  <section>
-    <h2>Why We Roost</h2>
-    <p>We believe second chances aren’t just for animals—they’re for people too. At Falling Feathers Hollow, we rescue the overlooked, love the forgotten, and create a space where healing happens naturally.</p>
-    <div class="quote">“Hope begins with a feather.”</div>
-  </section>
+  <div class="container">
+    <section>
+      <h2>Meet the Flock</h2>
+      <div class="flock-gallery">
+        <div class="flock-item">
+          <img src="duck_collage_cleaned.png" alt="Waddles and Ming Ming"/>
+          <p><strong>Waddles & Ming Ming</strong><br/>Our very first feathered friends.</p>
+        </div>
+        <div class="flock-item">
+          <img src="barred-rock-chicks-falling-feathers.jpg" alt="The Little Chicks"/>
+          <p><strong>The Little Chicks</strong><br/>Their chirps, flaps, and curiosity fill the whole sanctuary with life.</p>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>A Nest in the Making</h2>
-    <p>This is where our vision takes shape — a sanctuary designed with love, built feather by feather, step by step.</p>
-    <img src="falling_feathers_blueprint_web_ready.jpg" alt="Sanctuary blueprint" class="blueprint"/>
-  </section>
+    <section>
+      <h2>Why We Roost</h2>
+      <p>We believe second chances aren’t just for animals—they’re for people too. At Falling Feathers Hollow, we rescue the overlooked, love the forgotten, and create a space where healing happens naturally.</p>
+      <div class="quote">“Hope begins with a feather.”</div>
+    </section>
 
-  <section>
-    <h2>Join the Flock</h2>
-    <p>Sign up to receive updates, animal stories, and big announcements.</p>
-    <form class="email-signup">
-      <input type="email" placeholder="Enter your email"/>
-      <button type="submit">Subscribe</button>
-    </form>
-  </section>
+    <section>
+      <h2>A Nest in the Making</h2>
+      <p>This is where our vision takes shape — a sanctuary designed with love, built feather by feather, step by step.</p>
+      <img src="falling_feathers_blueprint_web_ready.jpg" alt="Sanctuary blueprint" class="blueprint"/>
+    </section>
 
-  <section>
-    <h2>FeatherGram Highlights</h2>
-    <div class="instagram-wrapper">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIcOi7VJQGa/?igsh=b3lwbmtocGRod2tj" data-instgrm-version="14" style="max-width:540px;"></blockquote>
-    </div>
-  </section>
-</div>
+    <section>
+      <h2>Join the Flock</h2>
+      <p>Sign up to receive updates, animal stories, and big announcements.</p>
+      <form class="email-signup">
+        <input type="email" placeholder="Enter your email"/>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
 
-<div class="audio-player">
-  <audio autoplay loop controls>
-    <source src="https://raw.githubusercontent.com/4HFund/4HFund/main/falling-feathers-hollow.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-</div>
+    <section>
+      <h2>FeatherGram Highlights</h2>
+      <div class="instagram-wrapper">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIcOi7VJQGa/?igsh=b3lwbmtocGRod2tj" data-instgrm-version="14" style="max-width:540px;"></blockquote>
+      </div>
+    </section>
+  </div>
 
-<footer>
-  <p>© Falling Feathers Hollow 2025. All rights reserved.</p>
-</footer>
+  <div class="audio-player">
+    <audio autoplay loop controls>
+      <source src="https://raw.githubusercontent.com/4HFund/4HFund/main/falling-feathers-hollow.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 
-<script>
-  const feathers = 20;
-  for (let i = 0; i < feathers; i++) {
-    const feather = document.createElement('div');
-    feather.classList.add('feather');
-    feather.innerText = "🪶";
-    feather.style.left = Math.random() * 100 + 'vw';
-    feather.style.animationDuration = (10 + Math.random() * 10) + 's';
-    document.body.appendChild(feather);
-  }
-</script>
-<script async src="https://www.instagram.com/embed.js"></script>
+  <footer>
+    <p>© Falling Feathers Hollow 2025. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const feathers = 20;
+    for (let i = 0; i < feathers; i++) {
+      const feather = document.createElement('div');
+      feather.classList.add('feather');
+      feather.innerText = "🪶";
+      feather.style.left = Math.random() * 100 + 'vw';
+      feather.style.animationDuration = (10 + Math.random() * 10) + 's';
+      document.body.appendChild(feather);
+    }
+  </script>
+  <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
