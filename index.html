@@ -22,55 +22,42 @@
       overflow-x: hidden;
     }
 
-    nav {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.5rem;
-      text-align: center;
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background: linear-gradient(145deg, #a47148, #8b5e3c);
-      padding: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      font-family: 'Georgia', serif;
-      border-bottom: 2px solid #d1a76f;
+      padding: 0.5rem 1rem;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
-    .nav-logo {
-      grid-column: 1 / -1;
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .nav-logo img {
-      height: 100px;
+    .navbar img {
+      height: 50px;
       object-fit: contain;
     }
 
-    nav a {
-      color: #fff;
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: white;
       text-decoration: none;
       font-weight: bold;
-      position: relative;
-      padding: 0.4rem;
-      transition: color 0.3s;
+      padding: 0.25rem 0.5rem;
+      transition: color 0.3s, border-bottom 0.3s;
       font-size: 0.95rem;
+      position: relative;
     }
 
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background: #fff;
-      bottom: -4px;
-      left: 0;
-      transition: width 0.3s;
-    }
-
-    nav a:hover::after {
-      width: 100%;
+    .nav-links a:hover {
+      color: #ffeed4;
     }
 
     .intro {
@@ -209,21 +196,22 @@
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-logo">
-      <a href="index.html">
-        <img src="falling_feathers_logo_compressed.jpg" alt="Falling Feathers Hollow Logo"/>
-      </a>
+
+  <div class="navbar">
+    <a href="index.html">
+      <img src="falling_feathers_logo_compressed.png" alt="Falling Feathers Hollow Logo"/>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Our Nest</a>
+      <a href="about.html">Our Story</a>
+      <a href="https://www.instagram.com/fallingfeathershollow?igsh=cW12ejlvZ3B2Zmox" target="_blank">FeatherGram</a>
+      <a href="profiles.html">Meet Our Flock</a>
+      <a href="sponsor.html">Sponsor</a>
+      <a href="trading-post.html">Trading Post</a>
+      <a href="Videos.html">Feathered Flicks</a>
+      <a href="studio/index.html">Studio</a>
     </div>
-    <a href="index.html">Our Nest</a>
-    <a href="about.html">Our Story</a>
-    <a href="https://www.instagram.com/fallingfeathershollow?igsh=cW12ejlvZ3B2Zmox" target="_blank">FeatherGram</a>
-    <a href="profiles.html">Meet Our Flock</a>
-    <a href="sponsor.html">Sponsor</a>
-    <a href="trading-post.html">Trading Post</a>
-    <a href="Videos.html">Feathered Flicks</a>
-    <a href="studio/index.html">Studio</a>
-  </nav>
+  </div>
 
   <section class="intro">
     <p>Falling Feathers Hollow is a peaceful place where animals are given space to thrive, people are reminded to breathe, and purpose is planted in everyday work.</p>
