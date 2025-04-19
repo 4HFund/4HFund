@@ -7,11 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --primary-bg: #f3e0c5;
-      --secondary-bg: #fcf6ee;
+      --primary-bg: #f4e0c5;
       --accent: #d1a76f;
       --text-dark: #4b3b2a;
-      --highlight: #f4d35e;
     }
 
     html, body {
@@ -37,7 +35,7 @@
       gap: 0.5rem;
       justify-items: center;
       align-items: center;
-      background-color: var(--accent);
+      background-color: var(--primary-bg);
       padding: 1rem;
       font-size: 0.95rem;
     }
@@ -62,12 +60,6 @@
       content: '🪶 ';
     }
 
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
     .intro {
       background-color: #fff9f0;
       padding: 1.5em;
@@ -75,17 +67,7 @@
       max-width: 800px;
       margin: 2em auto;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      position: relative;
       text-align: center;
-    }
-
-    .intro::before {
-      content: '🪶';
-      font-size: 2em;
-      position: absolute;
-      top: -0.8em;
-      left: 50%;
-      transform: translateX(-50%);
     }
 
     .intro p {
@@ -100,7 +82,6 @@
       margin: 2rem auto;
       padding: 2rem;
       background: var(--primary-bg);
-      border-radius: 12px;
     }
 
     section {
@@ -169,8 +150,7 @@
 
     .audio-player {
       text-align: center;
-      margin-top: 2rem;
-      padding: 1rem;
+      margin: 3rem 0 1rem;
     }
 
     .audio-player audio {
@@ -180,17 +160,23 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
+    .instagram-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .instagram-media {
+      border-radius: 12px !important;
+      overflow: hidden;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
       background-color: var(--accent);
       color: white;
       font-size: 0.9rem;
-      border-radius: 0 0 10px 10px;
-    }
-
-    .instagram-media {
-      margin: 0 auto !important;
     }
 
     .feather {
@@ -207,19 +193,12 @@
       0% { transform: translateY(0) rotate(0deg); opacity: 1; }
       100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
     }
-
-    @media (max-width: 600px) {
-      nav {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
   </style>
 </head>
 <body>
 <header>
   <img src="falling_feathers_logo_compressed.jpg" alt="Falling Feathers Hollow Logo"/>
 </header>
-
 <nav>
   <a href="index.html">Our Nest</a>
   <a href="about.html">Our Story</a>
@@ -231,53 +210,53 @@
   <a href="studio/index.html">Studio</a>
 </nav>
 
-<main>
-  <section class="intro">
-    <p>Falling Feathers Hollow is a peaceful place where animals are given space to thrive, people are reminded to breathe, and purpose is planted in everyday work.</p>
+<section class="intro">
+  <p>Falling Feathers Hollow is a peaceful place where animals are given space to thrive, people are reminded to breathe, and purpose is planted in everyday work.</p>
+</section>
+
+<div class="container">
+  <section>
+    <h2>Meet the Flock</h2>
+    <div class="flock-gallery">
+      <div class="flock-item">
+        <img src="duck_collage_cleaned.png" alt="Waddles and Ming Ming"/>
+        <p><strong>Waddles & Ming Ming</strong><br/>Our very first feathered friends.</p>
+      </div>
+      <div class="flock-item">
+        <img src="barred-rock-chicks-falling-feathers.jpg" alt="The Little Chicks"/>
+        <p><strong>The Little Chicks</strong><br/>Their chirps, flaps, and curiosity fill the whole sanctuary with life.</p>
+      </div>
+    </div>
   </section>
 
-  <div class="container">
-    <section>
-      <h2>Meet the Flock</h2>
-      <div class="flock-gallery">
-        <div class="flock-item">
-          <img src="duck_collage_cleaned.png" alt="Waddles and Ming Ming"/>
-          <p><strong>Waddles & Ming Ming</strong><br/>Our very first feathered friends.</p>
-        </div>
-        <div class="flock-item">
-          <img src="barred-rock-chicks-falling-feathers.jpg" alt="The Little Chicks"/>
-          <p><strong>The Little Chicks</strong><br/>Their chirps, flaps, and curiosity fill the whole sanctuary with life.</p>
-        </div>
-      </div>
-    </section>
+  <section>
+    <h2>Why We Roost</h2>
+    <p>We believe second chances aren’t just for animals—they’re for people too. At Falling Feathers Hollow, we rescue the overlooked, love the forgotten, and create a space where healing happens naturally.</p>
+    <div class="quote">“Hope begins with a feather.”</div>
+  </section>
 
-    <section>
-      <h2>Why We Roost</h2>
-      <p>We believe second chances aren’t just for animals—they’re for people too. At Falling Feathers Hollow, we rescue the overlooked, love the forgotten, and create a space where healing happens naturally.</p>
-      <div class="quote">“Hope begins with a feather.”</div>
-    </section>
+  <section>
+    <h2>A Nest in the Making</h2>
+    <p>This is where our vision takes shape — a sanctuary designed with love, built feather by feather, step by step.</p>
+    <img src="falling_feathers_blueprint_web_ready.jpg" alt="Sanctuary blueprint" class="blueprint"/>
+  </section>
 
-    <section>
-      <h2>A Nest in the Making</h2>
-      <p>This is where our vision takes shape — a sanctuary designed with love, built feather by feather, step by step.</p>
-      <img src="falling_feathers_blueprint_web_ready.jpg" alt="Sanctuary blueprint" class="blueprint"/>
-    </section>
+  <section>
+    <h2>Join the Flock</h2>
+    <p>Sign up to receive updates, animal stories, and big announcements.</p>
+    <form class="email-signup">
+      <input type="email" placeholder="Enter your email"/>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
 
-    <section>
-      <h2>Join the Flock</h2>
-      <p>Sign up to receive updates, animal stories, and big announcements.</p>
-      <form class="email-signup">
-        <input type="email" placeholder="Enter your email"/>
-        <button type="submit">Subscribe</button>
-      </form>
-    </section>
-
-    <section>
-      <h2>FeatherGram Highlights</h2>
+  <section>
+    <h2>FeatherGram Highlights</h2>
+    <div class="instagram-wrapper">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIcOi7VJQGa/?igsh=b3lwbmtocGRod2tj" data-instgrm-version="14" style="max-width:540px;"></blockquote>
-    </section>
-  </div>
-</main>
+    </div>
+  </section>
+</div>
 
 <div class="audio-player">
   <audio autoplay loop controls>
