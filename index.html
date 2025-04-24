@@ -106,6 +106,26 @@
       color: var(--ffh-brown);
     }
 
+  
+    /* Center all section titles */
+    h2 {
+      text-align: center;
+    }
+    /* Center Instagram embed */
+    .instagram-wrapper, .instagram-wrapper blockquote {
+      display: flex;
+      justify-content: center;
+    }
+    /* Center audio player and title */
+    .audio-player {
+      text-align: center;
+    }
+    .audio-player .audio-title {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--ffh-brown);
+    }
+
   </style>
 </head>
 <body>
@@ -171,6 +191,7 @@
         </div>
       </section>
       <div class="audio-player fade-in">
+      <p class="audio-title">Falling Feathers Hollow</p>
         <audio loop controls><source src="falling-feathers-hollow.mp3" type="audio/mpeg"></audio>
       </div>
     </div>
