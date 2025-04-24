@@ -62,6 +62,15 @@
     @media (prefers-reduced-motion:reduce){.fade-in{transition:none;transform:none;opacity:1;}}
     /* Footer */
     footer{text-align:center;padding:20px;background:var(--ffh-sand);font-size:14px;}
+  
+    /* Caption under images */
+    .flock-item .caption {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-weight: 500;
+      color: var(--ffh-brown);
+    }
+
   </style>
 </head>
 <body>
@@ -82,10 +91,15 @@
       <section class="content-block fade-in">
         <h2>Meet the Flock</h2>
         <div class="flock-gallery">
-          <div class="flock-item"><img src="duck_collage_cleaned.png" alt="Waddles & Ming Ming" loading="lazy"></div>
-          <div class="flock-item"><img src="barred-rock-chicks-falling-feathers.jpg" alt="The Little Chicks" loading="lazy"></div>
-        </div>
-        <p><strong>Waddles & Ming Ming</strong> &nbsp;&nbsp; <strong>The Little Chicks</strong></p>
+  <div class="flock-item">
+    <img src="duck_collage_cleaned.png" alt="Waddles & Ming Ming" loading="lazy">
+    <p class="caption"><strong>Waddles & Ming Ming</strong></p>
+  </div>
+  <div class="flock-item">
+    <img src="barred-rock-chicks-falling-feathers.jpg" alt="The Little Chicks" loading="lazy">
+    <p class="caption"><strong>The Little Chicks</strong></p>
+  </div>
+</div>
         <a href="profiles.html" class="cta-button">Discover the Full Flock</a>
       </section>
       <section class="content-block fade-in">
