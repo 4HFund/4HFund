@@ -1,149 +1,189 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Falling Feathers Hollow is a sanctuary where animals thrive, people find peace, and purpose grows through everyday work.">
   <title>Falling Feathers Hollow</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:wght@600&family=Dancing+Script&family=Poppins:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Lora&family=Dancing+Script&display=swap" rel="stylesheet"/>
   <style>
-    /* Color tokens */
-    :root { --ffh-brown:#6b3e26;--ffh-sand:#f8e6cf;--ffh-gold:#d2a97f;--ffh-cream:#fffaf4; }
-    *,*::before,*::after{box-sizing:border-box;}
-    body{margin:0;font-family:'Inter',sans-serif;background:var(--ffh-cream);color:#333;line-height:1.6;}
-    h2{font-family:'Lora',serif;font-weight:600;font-size:24px;margin-bottom:16px;color:var(--ffh-brown);}
-    /* Skip-link */
-    .skip-link{position:absolute;top:-40px;left:16px;background:var(--ffh-gold);color:#fff;padding:8px 12px;border-radius:4px;text-decoration:none;font-size:14px;transition:top .3s;}
-    .skip-link:focus{top:16px;}
-    /* Header */
-    header{text-align:center;margin:20px 0;}
-    header img{max-width:200px;width:100%;height:auto;}
-    /* Nav */
-    #nav-toggle{display:none;}
-    label[for="nav-toggle"]{display:none;cursor:pointer;font-size:28px;color:var(--ffh-brown);padding:8px 16px;}
-    .navbar{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:10px;background:var(--ffh-sand);font-size:16px;}
-    .navbar a{font-family:'Poppins',sans-serif;color:var(--ffh-brown);text-decoration:none;padding:8px 12px;border-radius:6px;}
-    .navbar a.active,.navbar a:hover{background:var(--ffh-gold);color:#fff;}
-    @media(max-width:600px){
-      label[for="nav-toggle"]{display:block;}
-      .navbar{display:none;flex-direction:column;}
-      #nav-toggle:checked+.navbar{display:flex;}
-    }
-    /* Intro */
-    .intro{font-style:italic;font-family:'Dancing Script',cursive;text-align:center;padding:20px;max-width:65ch;margin:0 auto 32px;background:#fff9f0;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.08);}
-    /* Container */
-    .container{max-width:960px;margin:0 auto;padding:0 20px 40px;}
-    .content-block{margin-bottom:48px;}
-    /* Flock gallery cards */
-    .flock-gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;}
-    .flock-item{flex:1 1 300px;max-width:300px;aspect-ratio:1/1;background:#fff;border:1px solid #e0d8c7;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-    .flock-item img{width:100%;height:100%;object-fit:cover;display:block;}
-    /* Blueprint */
-    .blueprint{width:100%;max-width:600px;height:auto;display:block;margin:1rem auto;border-radius:8px;}
-    /* CTA */
-    .cta-button{display:inline-block;margin-top:10px;padding:10px 20px;background:var(--ffh-gold);color:#fff;text-decoration:none;border-radius:6px;transition:transform .2s,box-shadow .2s;}
-    .cta-button:hover{transform:translateY(-2px);box-shadow:0 4px 8px rgba(0,0,0,.15);}
-    /* Form */
-    .email-signup{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:10px;}
-    .email-signup input[type="email"]{padding:10px;width:80%;max-width:400px;border:1px solid #ccc;border-radius:5px;}
-    .email-signup button{padding:10px 20px;background:var(--ffh-brown);color:#fff;border:none;border-radius:6px;cursor:pointer;}
-    .form-error{color:#c0392b;font-size:14px;min-height:1em;margin-top:4px;}
-    /* Sponsor CTA & back-to-top */
-    .sponsor-cta{position:fixed;bottom:80px;right:20px;padding:12px 16px;background:var(--ffh-brown);color:#fff;text-decoration:none;border-radius:6px;font-weight:500;box-shadow:0 4px 8px rgba(0,0,0,.15);opacity:.9;z-index:1000;}
-    .sponsor-cta:hover{opacity:1;}
-    .back-to-top{position:fixed;bottom:20px;right:20px;display:none;background:var(--ffh-brown);color:#fff;border:none;padding:10px;border-radius:50%;font-size:18px;cursor:pointer;}
-    .back-to-top.visible{display:block;}
-    /* Fade-in */
-    .fade-in{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
-    .fade-in.visible{opacity:1;transform:translateY(0);}
-    @media (prefers-reduced-motion:reduce){.fade-in{transition:none;transform:none;opacity:1;}}
-    /* Footer */
-    footer{text-align:center;padding:20px;background:var(--ffh-sand);font-size:14px;}
-  
-    /* Caption under images */
-    .flock-item .caption {
-      text-align: center;
-      margin-top: 0.5rem;
-      font-weight: 500;
-      color: var(--ffh-brown);
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fffaf4;
+      color: #333;
     }
 
-  
-    /* Gallery card container */
-    .flock-gallery {
+    header img {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .navbar {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
+      gap: 10px;
+      padding: 10px;
+      background: #f8e6cf;
+      font-size: 16px;
     }
-    .flock-card {
+
+    .navbar a {
+      text-decoration: none;
+      color: #6b3e26;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    .navbar a.active, .navbar a:hover {
+      background: #d2a97f;
+      color: white;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 20px;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .content-block {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: 'Lora', serif;
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #573818;
+    }
+
+    .flock-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .flock-item {
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .flock-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #d2a97f;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .quote {
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .blueprint {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 6px;
+    }
+
+    .email-signup {
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex: 1 1 300px;
-      max-width: 300px;
-    }
-    .flock-item {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: #fff;
-      border: 1px solid #e0d8c7;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .flock-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .caption {
-      text-align: center;
-      margin-top: 0.5rem;
-      font-weight: 500;
-      color: var(--ffh-brown);
+      gap: 10px;
+      margin-top: 10px;
     }
 
-  
-    /* Center all section titles */
-    h2 {
+    .email-signup input[type="email"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .email-signup button {
+      padding: 10px 20px;
+      background: #6b3e26;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .instagram-wrapper {
       text-align: center;
     }
-    /* Center Instagram embed */
-    .instagram-wrapper, .instagram-wrapper blockquote {
-      display: flex;
-      justify-content: center;
-    }
-    /* Center audio player and title */
+
     .audio-player {
       text-align: center;
-    }
-    .audio-player .audio-title {
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-      color: var(--ffh-brown);
+      margin-top: 40px;
     }
 
-  
-    /* Center all text in main content */
-    main, .container, .content-block, .intro {
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      background: #6b3e26;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+
+    .back-to-top.visible {
+      display: block;
+    }
+
+    footer {
       text-align: center;
-    }
-    /* Center CTA buttons */
-    .cta-button, .sponsor-cta {
-      display: inline-block;
-      margin: 1rem auto;
+      padding: 20px;
+      background: #f8e6cf;
+      font-size: 14px;
     }
 
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 20px;
+      }
+      .intro {
+        font-size: 16px;
+      }
+      .flock-gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header><img src="falling_feathers_logo_compressed.png" alt="Falling Feathers Hollow Logo"></header>
-  <input type="checkbox" id="nav-toggle"><label for="nav-toggle">☰</label>
-  <nav class="navbar">
+  <header>
+    <img src="falling_feathers_logo_compressed.png" alt="Falling Feathers Hollow Logo" />
+  </header>
+  <nav class="navbar" aria-label="Main navigation">
     <a href="index.html" class="active">Our Nest</a>
     <a href="about.html">Our Story</a>
     <a href="profiles.html">Meet Our Flock</a>
@@ -151,70 +191,92 @@
     <a href="studio/index.html">Studio</a>
     <a href="trading-post.html">Trading Post</a>
   </nav>
-  <main id="main">
-    <section class="intro fade-in">Falling Feathers Hollow is a peaceful place where animals are given space to thrive, people are reminded to breathe, and purpose is planted in everyday work.</section>
+  <main>
+    <section class="intro fade-in">
+      Falling Feathers Hollow is a peaceful place where animals are given space to thrive, people are reminded to breathe, and purpose is planted in everyday work.
+    </section>
     <div class="container">
-      <section class="content-block fade-in">
-        <h2>Meet the Flock</h2>
-        
-        
-      
-      <div class="flock-gallery">
-        <div class="flock-card">
+      <section class="content-block fade-in" aria-labelledby="meet-the-flock">
+        <h2 id="meet-the-flock">Meet the Flock</h2>
+        <div class="flock-gallery">
           <div class="flock-item">
-            <img src="duck_collage_cleaned.png" alt="Waddles & Ming Ming" loading="lazy">
+            <img src="duck_collage_cleaned.png" alt="Waddles and Ming Ming standing together" loading="lazy"/>
+            <p><strong>Waddles & Ming Ming</strong><br/>Our very first feathered friends.</p>
           </div>
-          <p class="caption">Waddles & Ming Ming</p>
-        </div>
-        <div class="flock-card">
           <div class="flock-item">
-            <img src="barred-rock-chicks-falling-feathers.jpg" alt="The Little Chicks" loading="lazy">
+            <img src="barred-rock-chicks-falling-feathers.jpg" alt="Barred rock chicks exploring the sanctuary" loading="lazy"/>
+            <p><strong>The Little Chicks</strong><br/>Their chirps, flaps, and curiosity fill the sanctuary with life.</p>
           </div>
-          <p class="caption">The Little Chicks</p>
         </div>
-      </div>
-
-      <a href="profiles.html" class="cta-button">Discover the Full Flock</a>
+        <a href="profiles.html" class="cta-button">Discover the Full Flock</a>
       </section>
-      <section class="content-block fade-in">
-        <h2>Why We Roost</h2>
+      <section class="content-block fade-in" aria-labelledby="why-we-roost">
+        <h2 id="why-we-roost">Why We Roost</h2>
         <p>We believe second chances aren’t just for animals—they’re for people too. At Falling Feathers Hollow, we rescue the overlooked, love the forgotten, and create a space where healing happens naturally.</p>
         <div class="quote">“Hope begins with a feather.”</div>
       </section>
-      <section class="content-block fade-in">
-        <h2>A Nest in the Making</h2>
+      <section class="content-block fade-in" aria-labelledby="nest-in-the-making">
+        <h2 id="nest-in-the-making">A Nest in the Making</h2>
         <p>This is where our vision takes shape — a sanctuary designed with love, built feather by feather.</p>
-        <img class="blueprint fade-in" src="falling_feathers_blueprint_web_ready.jpg" alt="Sanctuary blueprint" loading="lazy">
+        <img src="falling_feathers_blueprint_web_ready.jpg" alt="Sanctuary blueprint" class="blueprint" loading="lazy"/>
       </section>
-      <section class="content-block fade-in">
-        <h2>Join the Flock</h2>
+      <section class="content-block fade-in" aria-labelledby="join-the-flock">
+        <h2 id="join-the-flock">Join the Flock</h2>
         <p>Sign up to receive updates, animal stories, and big announcements.</p>
         <form class="email-signup">
-          <div id="email-error" class="form-error" role="alert"></div>
-          <input type="email" id="email-input" placeholder="Enter your email" required>
+          <label for="email-input" class="sr-only">Email address</label>
+          <input type="email" id="email-input" placeholder="Enter your email" required />
           <button type="submit">Subscribe</button>
         </form>
-      </section>  
-      <section class="content-block fade-in">
-        <h2>FeatherGram Highlights</h2>
-        <div id="ig-container" class="instagram-wrapper" data-embed-deferred>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIcOi7VJQGa/?igsh=b3lwbmtocGRod2tj" data-instgrm-version="14"></blockquote>
+      </section>
+      <section class="content-block fade-in" aria-labelledby="feathergram-highlights">
+        <h2 id="feathergram-highlights">FeatherGram Highlights</h2>
+        <div class="instagram-wrapper">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIcOi7VJQGa/?igsh=b3lwbmtocGRod2tj" data-instgrm-version="14" style="max-width:540px;"></blockquote>
         </div>
       </section>
-      <div class="audio-player fade-in">
-      <p class="audio-title">Falling Feathers Hollow</p>
-        <audio loop controls><source src="falling-feathers-hollow.mp3" type="audio/mpeg"></audio>
-      </div>
     </div>
+    
+<div class="audio-player">
+  <p>Watch the story of Falling Feathers Hollow</p>
+  <iframe src="https://drive.google.com/file/d/1wQarSMXva4Jvk2rHMUA37DlBYT3-siRP/preview" 
+          width="100%" height="480" allow="autoplay" style="border-radius: 8px; border: none;">
+  </iframe>
+</div>
+
   </main>
-  <a href="sponsor.html" class="sponsor-cta">Sponsor Us</a>
   <button class="back-to-top" aria-label="Back to top">⬆</button>
-  <footer>&copy; Falling Feathers Hollow 2025 &bull; <a href="mailto:info@fallingfeathers.us">info@fallingfeathers.us</a></footer>
+  <footer>
+    <p>© Falling Feathers Hollow 2025. All rights reserved.<br><a href="#">Email us</a></p>
+  </footer>
+  <script async defer src="https://www.instagram.com/embed.js"></script>
   <script>
-    document.querySelectorAll('.fade-in').forEach(el=>{const o=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');o.unobserve(i.target)}})},{threshold:0.1});o.observe(el)});
-    new IntersectionObserver(e=>{if(e[0].isIntersecting){let s=document.createElement('script');s.src='https://www.instagram.com/embed.js';s.async=s.defer=true;document.body.appendChild(s);}},{threshold:0.1}).observe(document.getElementById('ig-container'));
-    const b=document.querySelector('.back-to-top');window.addEventListener('scroll',()=>b.classList.toggle('visible',window.scrollY>300));b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-    const f=document.querySelector('.email-signup'),i=document.getElementById('email-input'),err=document.getElementById('email-error');f.addEventListener('submit',e=>{e.preventDefault();if(!i.validity.valid){err.textContent='Please enter a valid email.';i.focus();}else{err.textContent='';alert('Thanks for subscribing!');}});
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    faders.forEach(fade => observer.observe(fade));
+
+    document.querySelector('.email-signup').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.querySelector('#email-input').value;
+      if (email) {
+        alert('Thank you for subscribing!');
+      }
+    });
+
+    const backToTopButton = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTopButton.classList.toggle('visible', window.scrollY > 300);
+    });
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
