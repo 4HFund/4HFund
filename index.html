@@ -71,6 +71,41 @@
       color: var(--ffh-brown);
     }
 
+  
+    /* Gallery card container */
+    .flock-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .flock-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1 1 300px;
+      max-width: 300px;
+    }
+    .flock-item {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #fff;
+      border: 1px solid #e0d8c7;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .flock-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .caption {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-weight: 500;
+      color: var(--ffh-brown);
+    }
+
   </style>
 </head>
 <body>
@@ -90,10 +125,22 @@
     <div class="container">
       <section class="content-block fade-in">
         <h2>Meet the Flock</h2>
+        
         <div class="flock-gallery">
-  <div class="flock-item">
-    <img src="duck_collage_cleaned.png" alt="Waddles & Ming Ming" loading="lazy">
-    <p class="caption"><strong>Waddles & Ming Ming</strong></p>
+          <div class="flock-card">
+            <div class="flock-item">
+              <img src="duck_collage_cleaned.png" alt="Waddles & Ming Ming" loading="lazy">
+            </div>
+            <p class="caption">Waddles & Ming Ming</p>
+          </div>
+          <div class="flock-card">
+            <div class="flock-item">
+              <img src="barred-rock-chicks-falling-feathers.jpg" alt="The Little Chicks" loading="lazy">
+            </div>
+            <p class="caption">The Little Chicks</p>
+          </div>
+        </div>
+
   </div>
   <div class="flock-item">
     <img src="barred-rock-chicks-falling-feathers.jpg" alt="The Little Chicks" loading="lazy">
