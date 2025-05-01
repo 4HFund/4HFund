@@ -125,9 +125,12 @@ body:not(.light-mode) .stars::before {
   position: absolute;
   width: 200%;
   height: 200%;
-  background: radial-gradient(white 1px, transparent 1px);
-  background-size: 50px 50px;
-  opacity: 0.2;
+  /* Layered gradients, offset to break the grid repetition */
+  background:
+    radial-gradient(white 1px, transparent 1px) 0 0 / 3px 3px,
+    radial-gradient(white 1px, transparent 1px) 20px 15px / 3px 3px,
+    radial-gradient(white 1px, transparent 1px) 40px 30px / 3px 3px;
+  opacity: 0.18;
   animation: twinkle 90s linear infinite;
 }
 
@@ -259,107 +262,114 @@ body:not(.light-mode) .stars::before {
     <h2>About Falling Feathers Studio</h2>
     <p>Professional doesn’t have to mean boring — and affordable doesn’t have to mean basic. We help small businesses and nonprofits glow up their brand, site, and story — all without maxing out a credit card. Powered by faith, coffee, and the belief that creativity should be as accessible as it is awesome.</p>
   </section>
-<!-- Services Section -->
-<section id="services">
-  <h2>What We Create</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <div style="font-size: 2rem;">🎵</div>
-      <h3>Custom Songs</h3>
-      <p>Your story, your vibe — turned into a song.</p>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>What We Create</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div style="font-size: 2rem;">🎵</div>
+        <h3>Custom Songs</h3>
+        <p>Your story, your vibe — turned into a song.</p>
+      </div>
+      <div class="service-card">
+        <div style="font-size: 2rem;">🎨</div>
+        <h3>Logo Design</h3>
+        <p>Bold, beautiful logos that match your spirit.</p>
+      </div>
+      <div class="service-card">
+        <div style="font-size: 2rem;">🌐</div>
+        <h3>Website Design</h3>
+        <p>Launch-ready, stunning websites that shine.</p>
+      </div>
+      <div class="service-card">
+        <div style="font-size: 2rem;">✨</div>
+        <h3>Brand Consulting</h3>
+        <p>Find your voice and tell your story right.</p>
+      </div>
     </div>
-    <div class="service-card">
-      <div style="font-size: 2rem;">🎨</div>
-      <h3>Logo Design</h3>
-      <p>Bold, beautiful logos that match your spirit.</p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Studio Soundboard</h2>
+    <div class="portfolio">
+      <p>Check out our latest music projects:</p>
+      <a href="https://distrokid.com/hyperfollow/brokenwingsrising/shepherd-in-sneakers/" target="_blank" class="cta-button">Shepherd in Sneakers</a>
+      <a href="https://distrokid.com/hyperfollow/brokenwingsrising/our-country-side/" target="_blank" class="cta-button">Our Country Side</a>
+      <a href="https://distrokid.com/hyperfollow/brokenwingsrising/hard-to-be-man/" target="_blank" class="cta-button">Hard to Be a Man</a>
+      <a href="https://distrokid.com/hyperfollow/brokenwingsrising/forged-at-the-foundery" target="_blank" class="cta-button">Forged at the Foundery</a>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fallingfeathersstudio" data-unique-id="fallingfeathersstudio" data-embed-type="creator" style="max-width: 780px; min-width: 288px; margin-top: 30px;">
+        <section><a target="_blank" href="https://www.tiktok.com/@fallingfeathersstudio?refer=creator_embed">@fallingfeathersstudio</a></section>
+      </blockquote>
     </div>
-    <div class="service-card">
-      <div style="font-size: 2rem;">🌐</div>
-      <h3>Website Design</h3>
-      <p>Launch-ready, stunning websites that shine.</p>
-    </div>
-    <div class="service-card">
-      <div style="font-size: 2rem;">✨</div>
-      <h3>Brand Consulting</h3>
-      <p>Find your voice and tell your story right.</p>
-    </div>
-  </div>
-</section>
-<!-- Portfolio Section -->
-<section id="portfolio">
-  <h2>Studio Soundboard</h2>
-  <div class="portfolio">
-    <p>Check out our latest music projects:</p>
-    <a href="https://distrokid.com/hyperfollow/brokenwingsrising/shepherd-in-sneakers/" target="_blank" class="cta-button">Shepherd in Sneakers</a>
-    <a href="https://distrokid.com/hyperfollow/brokenwingsrising/our-country-side/" target="_blank" class="cta-button">Our Country Side</a>
-    <a href="https://distrokid.com/hyperfollow/brokenwingsrising/hard-to-be-man/" target="_blank" class="cta-button">Hard to Be a Man</a>
-    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fallingfeathersstudio" data-unique-id="fallingfeathersstudio" data-embed-type="creator" style="max-width: 780px; min-width: 288px; margin-top: 30px;">
-      <section><a target="_blank" href="https://www.tiktok.com/@fallingfeathersstudio?refer=creator_embed">@fallingfeathersstudio</a></section>
-    </blockquote>
-  </div>
-</section>
-<!-- FAQ Section -->
-<section id="faq">
-  <h2>Frequently Asked Questions</h2>
-  <ul style="list-style: none; padding: 0; text-align: left;">
-    <li><strong>How long does a custom song take?</strong> Around 2–3 weeks depending on complexity.</li>
-    <li><strong>Can you design my website too?</strong> Absolutely — full packages available.</li>
-    <li><strong>What’s included in a branding package?</strong> Logo, style guide, basic social templates.</li>
-    <li><strong>How do revisions work?</strong> Two free rounds of revisions included.</li>
-    <li><strong>Do you offer discounts for nonprofits?</strong> Yes! Message us for a custom quote.</li>
-  </ul>
-</section>
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Get In Touch</h2>
-  <p>Email: <a href="mailto:studio@fallingfeathers.us">studio@fallingfeathers.us</a></p>
-  <form id="songForm" action="https://formspree.io/f/xpwdwyyv" method="POST">
-    <label for="name">Your Name:</label>
-    <input type="text" id="name" name="Name" required>
+  </section>
 
-<label for="email">Your Email:</label>
-<input type="email" id="email" name="Email" required>
+  <!-- FAQ Section -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <ul style="list-style: none; padding: 0; text-align: left;">
+      <li><strong>How long does a custom song take?</strong> Around 2–3 weeks depending on complexity.</li>
+      <li><strong>Can you design my website too?</strong> Absolutely — full packages available.</li>
+      <li><strong>What’s included in a branding package?</strong> Logo, style guide, basic social templates.</li>
+      <li><strong>How do revisions work?</strong> Two free rounds of revisions included.</li>
+      <li><strong>Do you offer discounts for nonprofits?</strong> Yes! Message us for a custom quote.</li>
+    </ul>
+  </section>
 
-<label for="artist">Artist Name (for Spotify):</label>
-<input type="text" id="artist" name="Artist Name">
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <p>Email: <a href="mailto:studio@fallingfeathers.us">studio@fallingfeathers.us</a></p>
+    <form id="songForm" action="https://formspree.io/f/xpwdwyyv" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="Name" required>
 
-<label for="theme">What should your song be about?</label>
-<textarea id="theme" name="Theme" rows="4" required></textarea>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="Email" required>
 
-<label for="vibe">Vibe / Style:</label>
-<select id="vibe" name="Vibe">
-  <option>Emotional & Honest</option>
-  <option>Funny/Weird</option>
-  <option>Hype/Motivational</option>
-  <option>Love Song</option>
-  <option>Diss Track</option>
-  <option>Chill & Viby</option>
-  <option>Something Else</option>
-</select>
+      <label for="artist">Artist Name (for Spotify):</label>
+      <input type="text" id="artist" name="Artist Name">
 
-<label for="genre">Preferred Genre:</label>
-<input type="text" id="genre" name="Genre">
+      <label for="theme">What should your song be about?</label>
+      <textarea id="theme" name="Theme" rows="4" required></textarea>
 
-<label for="lyrics">Must-have lyrics or quotes:</label>
-<textarea id="lyrics" name="Must-Haves" rows="3"></textarea>
+      <label for="vibe">Vibe / Style:</label>
+      <select id="vibe" name="Vibe">
+        <option>Emotional & Honest</option>
+        <option>Funny/Weird</option>
+        <option>Hype/Motivational</option>
+        <option>Love Song</option>
+        <option>Diss Track</option>
+        <option>Chill & Viby</option>
+        <option>Something Else</option>
+      </select>
 
-<label for="publish">Publish on Spotify?</label>
-<select id="publish" name="Spotify Release">
-  <option>Yes</option>
-  <option>No</option>
-</select>
+      <label for="genre">Preferred Genre:</label>
+      <input type="text" id="genre" name="Genre">
 
-<label for="notes">Anything else we should know?</label>
-<textarea id="notes" name="Notes" rows="3"></textarea>
+      <label for="lyrics">Must-have lyrics or quotes:</label>
+      <textarea id="lyrics" name="Must-Haves" rows="3"></textarea>
 
-<div style="text-align: center;">
-  <button type="submit" class="cta-button">Submit Song Request 🦆</button>
+      <label for="publish">Publish on Spotify?</label>
+      <select id="publish" name="Spotify Release">
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label for="notes">Anything else we should know?</label>
+      <textarea id="notes" name="Notes" rows="3"></textarea>
+
+      <div style="text-align: center;">
+        <button type="submit" class="cta-button">Submit Song Request 🦆</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>© 2025 Falling Feathers Studio. Creativity without limits — Quack responsibly.</footer>
 </div>
-  </form>
-</section>
-<!-- Footer -->
-<footer>© 2025 Falling Feathers Studio. Creativity without limits — Quack responsibly.</footer>
-</div>
+
 <!-- Scripts -->
 <script async src="https://www.tiktok.com/embed.js"></script>
 <script>
